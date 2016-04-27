@@ -37,12 +37,12 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let scene = GameScene(fileNamed: "GameScene.sks")
+        let scene = GameScene(size: view.frame.size)
         let skView = view as! SKView
         skView.showsFPS = false
         skView.showsNodeCount = false
         skView.ignoresSiblingOrder = true
-        scene!.scaleMode = .ResizeFill
+        scene.scaleMode = .ResizeFill
         skView.presentScene(scene)
     }
     
