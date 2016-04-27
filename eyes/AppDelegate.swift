@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  eyes
-//
-//  Created by Serkan Sokmen on 24/04/16.
-//  Copyright © 2016 Serkan Sokmen. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -16,6 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        application.idleTimerDisabled = true
         return true
     }
 

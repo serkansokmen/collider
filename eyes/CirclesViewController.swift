@@ -1,17 +1,9 @@
-//
-//  GameViewController.swift
-//  eyes
-//
-//  Created by Serkan Sokmen on 24/04/16.
-//  Copyright (c) 2016 Serkan Sokmen. All rights reserved.
-//
-
 import UIKit
 import SpriteKit
 import C4
 
 
-class GameViewController: UIViewController {
+class CirclesViewController: UIViewController {
     
     var lastRotation = CGFloat(0.0)
     
@@ -37,12 +29,13 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let scene = GameScene(size: view.frame.size)
+//        let scene = GameScene(size: view.frame.size)
+        let scene = CirclesScene(fileNamed: "CirclesScene")
         let skView = view as! SKView
         skView.showsFPS = false
         skView.showsNodeCount = false
         skView.ignoresSiblingOrder = true
-        scene.scaleMode = .ResizeFill
+        scene!.scaleMode = .ResizeFill
         skView.presentScene(scene)
     }
     

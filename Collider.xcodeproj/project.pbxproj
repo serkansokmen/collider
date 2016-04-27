@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E60EE4E91CD1857000CB0DBA /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E60EE4E81CD1857000CB0DBA /* hit.wav */; };
+		E60EE4EB1CD1859600CB0DBA /* hit-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E60EE4EA1CD1859600CB0DBA /* hit-2.wav */; };
 		E63F302D1CCD683B0024ACE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F302C1CCD683B0024ACE4 /* AppDelegate.swift */; };
-		E63F30311CCD683B0024ACE4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F30301CCD683B0024ACE4 /* GameScene.swift */; };
-		E63F30331CCD683B0024ACE4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F30321CCD683B0024ACE4 /* GameViewController.swift */; };
+		E63F30311CCD683B0024ACE4 /* CirclesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F30301CCD683B0024ACE4 /* CirclesScene.swift */; };
+		E63F30331CCD683B0024ACE4 /* CirclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F30321CCD683B0024ACE4 /* CirclesViewController.swift */; };
 		E63F30361CCD683B0024ACE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63F30341CCD683B0024ACE4 /* Main.storyboard */; };
 		E63F30381CCD683B0024ACE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E63F30371CCD683B0024ACE4 /* Assets.xcassets */; };
 		E63F303B1CCD683B0024ACE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63F30391CCD683B0024ACE4 /* LaunchScreen.storyboard */; };
-		E63F30441CCD6E3A0024ACE4 /* SparkParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E63F30421CCD6E3A0024ACE4 /* SparkParticle.sks */; };
 		E63F30471CCD78DC0024ACE4 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F30461CCD78DC0024ACE4 /* Helper.swift */; };
-		E63F304B1CCD7EAA0024ACE4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E63F304A1CCD7EAA0024ACE4 /* GameScene.sks */; };
+		E63F304B1CCD7EAA0024ACE4 /* CirclesScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E63F304A1CCD7EAA0024ACE4 /* CirclesScene.sks */; };
+		E6A4E6171CD16DF70020DE7E /* SparkParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6A4E6151CD16DF70020DE7E /* SparkParticle.sks */; };
 		F24CBC17C9D177A08239CB5F /* Pods_eyes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA96D672F4BBC4D52569AD1F /* Pods_eyes.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,17 +25,19 @@
 		37774467D6FAABBA0A10DF12 /* Pods-eyes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eyes.release.xcconfig"; path = "Pods/Target Support Files/Pods-eyes/Pods-eyes.release.xcconfig"; sourceTree = "<group>"; };
 		571F3AF52999EE9539B1DD6C /* Pods-eyes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eyes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eyes/Pods-eyes.debug.xcconfig"; sourceTree = "<group>"; };
 		BA96D672F4BBC4D52569AD1F /* Pods_eyes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eyes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E63F30291CCD683B0024ACE4 /* eyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E60EE4E81CD1857000CB0DBA /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hit.wav; path = assets/hit.wav; sourceTree = SOURCE_ROOT; };
+		E60EE4EA1CD1859600CB0DBA /* hit-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "hit-2.wav"; path = "assets/hit-2.wav"; sourceTree = SOURCE_ROOT; };
+		E63F30291CCD683B0024ACE4 /* Collider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63F302C1CCD683B0024ACE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E63F30301CCD683B0024ACE4 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		E63F30321CCD683B0024ACE4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E63F30301CCD683B0024ACE4 /* CirclesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesScene.swift; sourceTree = "<group>"; };
+		E63F30321CCD683B0024ACE4 /* CirclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesViewController.swift; sourceTree = "<group>"; };
 		E63F30351CCD683B0024ACE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E63F30371CCD683B0024ACE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E63F303A1CCD683B0024ACE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E63F303C1CCD683B0024ACE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E63F30421CCD6E3A0024ACE4 /* SparkParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparkParticle.sks; sourceTree = "<group>"; };
 		E63F30461CCD78DC0024ACE4 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		E63F304A1CCD7EAA0024ACE4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		E63F304A1CCD7EAA0024ACE4 /* CirclesScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CirclesScene.sks; sourceTree = "<group>"; };
+		E6A4E6151CD16DF70020DE7E /* SparkParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparkParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,7 @@
 		E63F30201CCD683B0024ACE4 = {
 			isa = PBXGroup;
 			children = (
-				E63F302B1CCD683B0024ACE4 /* eyes */,
+				E63F302B1CCD683B0024ACE4 /* Collider */,
 				E63F302A1CCD683B0024ACE4 /* Products */,
 				64EF735F9B901362B92E15D4 /* Pods */,
 				F89390F0520CF976A6FCC012 /* Frameworks */,
@@ -70,25 +74,28 @@
 		E63F302A1CCD683B0024ACE4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E63F30291CCD683B0024ACE4 /* eyes.app */,
+				E63F30291CCD683B0024ACE4 /* Collider.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E63F302B1CCD683B0024ACE4 /* eyes */ = {
+		E63F302B1CCD683B0024ACE4 /* Collider */ = {
 			isa = PBXGroup;
 			children = (
 				E63F302C1CCD683B0024ACE4 /* AppDelegate.swift */,
-				E63F30301CCD683B0024ACE4 /* GameScene.swift */,
-				E63F30321CCD683B0024ACE4 /* GameViewController.swift */,
+				E63F30301CCD683B0024ACE4 /* CirclesScene.swift */,
+				E63F30321CCD683B0024ACE4 /* CirclesViewController.swift */,
 				E63F30341CCD683B0024ACE4 /* Main.storyboard */,
 				E63F30461CCD78DC0024ACE4 /* Helper.swift */,
 				E63F30371CCD683B0024ACE4 /* Assets.xcassets */,
 				E63F30391CCD683B0024ACE4 /* LaunchScreen.storyboard */,
 				E63F303C1CCD683B0024ACE4 /* Info.plist */,
-				E63F30421CCD6E3A0024ACE4 /* SparkParticle.sks */,
-				E63F304A1CCD7EAA0024ACE4 /* GameScene.sks */,
+				E63F304A1CCD7EAA0024ACE4 /* CirclesScene.sks */,
+				E6A4E6151CD16DF70020DE7E /* SparkParticle.sks */,
+				E60EE4E81CD1857000CB0DBA /* hit.wav */,
+				E60EE4EA1CD1859600CB0DBA /* hit-2.wav */,
 			);
+			name = Collider;
 			path = eyes;
 			sourceTree = "<group>";
 		};
@@ -103,9 +110,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E63F30281CCD683B0024ACE4 /* eyes */ = {
+		E63F30281CCD683B0024ACE4 /* Collider */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E63F303F1CCD683B0024ACE4 /* Build configuration list for PBXNativeTarget "eyes" */;
+			buildConfigurationList = E63F303F1CCD683B0024ACE4 /* Build configuration list for PBXNativeTarget "Collider" */;
 			buildPhases = (
 				4377ABB4101BDA2F3C58B8CA /* 📦 Check Pods Manifest.lock */,
 				E63F30251CCD683B0024ACE4 /* Sources */,
@@ -118,9 +125,9 @@
 			);
 			dependencies = (
 			);
-			name = eyes;
+			name = Collider;
 			productName = eyes;
-			productReference = E63F30291CCD683B0024ACE4 /* eyes.app */;
+			productReference = E63F30291CCD683B0024ACE4 /* Collider.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,7 +145,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E63F30241CCD683B0024ACE4 /* Build configuration list for PBXProject "eyes" */;
+			buildConfigurationList = E63F30241CCD683B0024ACE4 /* Build configuration list for PBXProject "Collider" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -151,7 +158,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E63F30281CCD683B0024ACE4 /* eyes */,
+				E63F30281CCD683B0024ACE4 /* Collider */,
 			);
 		};
 /* End PBXProject section */
@@ -162,10 +169,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E63F303B1CCD683B0024ACE4 /* LaunchScreen.storyboard in Resources */,
-				E63F304B1CCD7EAA0024ACE4 /* GameScene.sks in Resources */,
-				E63F30441CCD6E3A0024ACE4 /* SparkParticle.sks in Resources */,
+				E63F304B1CCD7EAA0024ACE4 /* CirclesScene.sks in Resources */,
 				E63F30381CCD683B0024ACE4 /* Assets.xcassets in Resources */,
 				E63F30361CCD683B0024ACE4 /* Main.storyboard in Resources */,
+				E60EE4EB1CD1859600CB0DBA /* hit-2.wav in Resources */,
+				E6A4E6171CD16DF70020DE7E /* SparkParticle.sks in Resources */,
+				E60EE4E91CD1857000CB0DBA /* hit.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,8 +233,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E63F30311CCD683B0024ACE4 /* GameScene.swift in Sources */,
-				E63F30331CCD683B0024ACE4 /* GameViewController.swift in Sources */,
+				E63F30311CCD683B0024ACE4 /* CirclesScene.swift in Sources */,
+				E63F30331CCD683B0024ACE4 /* CirclesViewController.swift in Sources */,
 				E63F302D1CCD683B0024ACE4 /* AppDelegate.swift in Sources */,
 				E63F30471CCD78DC0024ACE4 /* Helper.swift in Sources */,
 			);
@@ -346,7 +355,7 @@
 				INFOPLIST_FILE = eyes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.ofoto.ios.eyes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Collider;
 			};
 			name = Debug;
 		};
@@ -358,14 +367,14 @@
 				INFOPLIST_FILE = eyes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.ofoto.ios.eyes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Collider;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E63F30241CCD683B0024ACE4 /* Build configuration list for PBXProject "eyes" */ = {
+		E63F30241CCD683B0024ACE4 /* Build configuration list for PBXProject "Collider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E63F303D1CCD683B0024ACE4 /* Debug */,
@@ -374,7 +383,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E63F303F1CCD683B0024ACE4 /* Build configuration list for PBXNativeTarget "eyes" */ = {
+		E63F303F1CCD683B0024ACE4 /* Build configuration list for PBXNativeTarget "Collider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E63F30401CCD683B0024ACE4 /* Debug */,

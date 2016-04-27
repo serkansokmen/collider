@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:eyes.xcodeproj">
+      location = "group:/Users/ssokmen/Documents/iOS/eyes/Collider.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
