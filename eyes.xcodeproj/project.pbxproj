@@ -13,10 +13,9 @@
 		E63F30361CCD683B0024ACE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63F30341CCD683B0024ACE4 /* Main.storyboard */; };
 		E63F30381CCD683B0024ACE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E63F30371CCD683B0024ACE4 /* Assets.xcassets */; };
 		E63F303B1CCD683B0024ACE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63F30391CCD683B0024ACE4 /* LaunchScreen.storyboard */; };
-		E63F30441CCD6E3A0024ACE4 /* EyeParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E63F30421CCD6E3A0024ACE4 /* EyeParticle.sks */; };
+		E63F30441CCD6E3A0024ACE4 /* SparkParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E63F30421CCD6E3A0024ACE4 /* SparkParticle.sks */; };
 		E63F30471CCD78DC0024ACE4 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F30461CCD78DC0024ACE4 /* Helper.swift */; };
 		E63F304B1CCD7EAA0024ACE4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E63F304A1CCD7EAA0024ACE4 /* GameScene.sks */; };
-		E63F304D1CCD7F620024ACE4 /* SparkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F304C1CCD7F620024ACE4 /* SparkNode.swift */; };
 		F24CBC17C9D177A08239CB5F /* Pods_eyes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA96D672F4BBC4D52569AD1F /* Pods_eyes.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,10 +31,9 @@
 		E63F30371CCD683B0024ACE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E63F303A1CCD683B0024ACE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E63F303C1CCD683B0024ACE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E63F30421CCD6E3A0024ACE4 /* EyeParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EyeParticle.sks; sourceTree = "<group>"; };
+		E63F30421CCD6E3A0024ACE4 /* SparkParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparkParticle.sks; sourceTree = "<group>"; };
 		E63F30461CCD78DC0024ACE4 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E63F304A1CCD7EAA0024ACE4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		E63F304C1CCD7F620024ACE4 /* SparkNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +86,8 @@
 				E63F30371CCD683B0024ACE4 /* Assets.xcassets */,
 				E63F30391CCD683B0024ACE4 /* LaunchScreen.storyboard */,
 				E63F303C1CCD683B0024ACE4 /* Info.plist */,
-				E63F30421CCD6E3A0024ACE4 /* EyeParticle.sks */,
+				E63F30421CCD6E3A0024ACE4 /* SparkParticle.sks */,
 				E63F304A1CCD7EAA0024ACE4 /* GameScene.sks */,
-				E63F304C1CCD7F620024ACE4 /* SparkNode.swift */,
 			);
 			path = eyes;
 			sourceTree = "<group>";
@@ -166,7 +163,7 @@
 			files = (
 				E63F303B1CCD683B0024ACE4 /* LaunchScreen.storyboard in Resources */,
 				E63F304B1CCD7EAA0024ACE4 /* GameScene.sks in Resources */,
-				E63F30441CCD6E3A0024ACE4 /* EyeParticle.sks in Resources */,
+				E63F30441CCD6E3A0024ACE4 /* SparkParticle.sks in Resources */,
 				E63F30381CCD683B0024ACE4 /* Assets.xcassets in Resources */,
 				E63F30361CCD683B0024ACE4 /* Main.storyboard in Resources */,
 			);
@@ -229,7 +226,6 @@
 			files = (
 				E63F30311CCD683B0024ACE4 /* GameScene.swift in Sources */,
 				E63F30331CCD683B0024ACE4 /* GameViewController.swift in Sources */,
-				E63F304D1CCD7F620024ACE4 /* SparkNode.swift in Sources */,
 				E63F302D1CCD683B0024ACE4 /* AppDelegate.swift in Sources */,
 				E63F30471CCD78DC0024ACE4 /* Helper.swift in Sources */,
 			);
