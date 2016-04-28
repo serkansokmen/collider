@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:eyes.xcodeproj">
+      location = "self:Collider.xcodeproj">
    </FileRef>
 </Workspace>

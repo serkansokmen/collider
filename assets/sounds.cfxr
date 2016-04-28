@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>DF59F723-42A0-413C-B2CB-695023CE76FA</UUID>
-        <nextObjectID>102</nextObjectID>
+        <nextObjectID>103</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -28,34 +28,21 @@
             </plist>
         </metadata>
     </databaseInfo>
-    <object type="SOUND" id="z102">
-        <attribute name="wavetype" type="int16">0</attribute>
+    <object type="SOUND" id="z103">
+        <attribute name="wavetype" type="int16">2</attribute>
         <attribute name="volume" type="float">50</attribute>
-        <attribute name="vibratospeed" type="float">0.5379071</attribute>
-        <attribute name="vibratodepth" type="float">0.7815526</attribute>
-        <attribute name="sustaintime" type="float">0.08348922</attribute>
-        <attribute name="sustainpunch" type="float">0.05738336</attribute>
-        <attribute name="startfrequency" type="float">0.2885123</attribute>
-        <attribute name="slide" type="float">-0.362456</attribute>
+        <attribute name="sustaintime" type="float">0.0657</attribute>
+        <attribute name="startfrequency" type="float">0.73268</attribute>
+        <attribute name="squareduty" type="float">0.11418</attribute>
+        <attribute name="slide" type="float">-0.59824</attribute>
         <attribute name="samplerate" type="int32">44100</attribute>
-        <attribute name="repeatspeed" type="float">0</attribute>
         <attribute name="rating" type="int16">0</attribute>
-        <attribute name="phasersweep" type="float">-0.01496476</attribute>
-        <attribute name="phaseroffset" type="float">-0.2622689</attribute>
         <attribute name="name" type="string">Hit/hurt</attribute>
-        <attribute name="minfrequencycutoff" type="float">0.1129511</attribute>
-        <attribute name="lowpassfilterresonance" type="float">0.7901629</attribute>
-        <attribute name="lowpassfiltercutoffsweep" type="float">0.01843095</attribute>
         <attribute name="lowpassfiltercutoff" type="float">1</attribute>
-        <attribute name="index" type="int32">2</attribute>
-        <attribute name="highpassfiltercutoffsweep" type="float">0.4613776</attribute>
-        <attribute name="highpassfiltercutoff" type="float">0.2159991</attribute>
-        <attribute name="dutysweep" type="float">0.4289722</attribute>
-        <attribute name="deltaslide" type="float">0.1801276</attribute>
-        <attribute name="decaytime" type="float">0.1372139</attribute>
-        <attribute name="changespeed" type="float">0.2806723</attribute>
-        <attribute name="changeamount" type="float">0.3789062</attribute>
+        <attribute name="index" type="int32">5</attribute>
+        <attribute name="highpassfiltercutoff" type="float">0.15609</attribute>
+        <attribute name="decaytime" type="float">0.24776</attribute>
         <attribute name="bitdepth" type="int16">16</attribute>
-        <attribute name="attacktime" type="float">0.03653169</attribute>
+        <attribute name="attacktime" type="float">0</attribute>
     </object>
 </database>
