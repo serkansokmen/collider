@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Mill-->
+        <!--Art Board View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="MillViewController" customModule="Collider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="ArtBoardViewController" customModule="Collider" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
@@ -20,9 +20,10 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="bkN-tO-xig" appends="YES" id="UfD-N8-JSd"/>
+                            <outletCollection property="gestureRecognizers" destination="p4W-bU-dec" appends="YES" id="g0Z-7g-H1d"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mill" id="bOx-o9-vOy"/>
+                    <navigationItem key="navigationItem" id="322-7v-QUa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <rotationGestureRecognizer id="bkN-tO-xig">
@@ -30,8 +31,13 @@
                         <action selector="rotated:" destination="BV1-FR-VrT" id="0zQ-7l-1IR"/>
                     </connections>
                 </rotationGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="p4W-bU-dec">
+                    <connections>
+                        <action selector="longPressed:" destination="BV1-FR-VrT" id="eDg-jY-tSz"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="612" y="187"/>
+            <point key="canvasLocation" x="430" y="-305"/>
         </scene>
     </scenes>
 </document>
