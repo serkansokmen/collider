@@ -20,7 +20,7 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="bkN-tO-xig" appends="YES" id="UfD-N8-JSd"/>
-                            <outletCollection property="gestureRecognizers" destination="p4W-bU-dec" appends="YES" id="g0Z-7g-H1d"/>
+                            <outletCollection property="gestureRecognizers" destination="ubY-mD-8gw" appends="YES" id="rJG-jE-PlT"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="322-7v-QUa"/>
@@ -31,9 +31,9 @@
                         <action selector="rotated:" destination="BV1-FR-VrT" id="0zQ-7l-1IR"/>
                     </connections>
                 </rotationGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="p4W-bU-dec">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ubY-mD-8gw">
                     <connections>
-                        <action selector="longPressed:" destination="BV1-FR-VrT" id="eDg-jY-tSz"/>
+                        <action selector="longPressed:" destination="BV1-FR-VrT" id="V2Z-dT-BEj"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>

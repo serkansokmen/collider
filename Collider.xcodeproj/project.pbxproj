@@ -12,11 +12,12 @@
 		E60EE4FA1CD1999D00CB0DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60EE4EE1CD1999D00CB0DBA /* Assets.xcassets */; };
 		E60EE4FB1CD1999D00CB0DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60EE4EF1CD1999D00CB0DBA /* LaunchScreen.storyboard */; };
 		E60EE4FC1CD1999D00CB0DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60EE4F11CD1999D00CB0DBA /* Main.storyboard */; };
-		E60EE4FE1CD1999D00CB0DBA /* ArtBoardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4F41CD1999D00CB0DBA /* ArtBoardScene.swift */; };
+		E60EE4FE1CD1999D00CB0DBA /* MillScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4F41CD1999D00CB0DBA /* MillScene.swift */; };
 		E60EE4FF1CD1999D00CB0DBA /* MillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */; };
 		E60EE5001CD1999D00CB0DBA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4F61CD1999D00CB0DBA /* Helper.swift */; };
-		E62C156C1CD3BE4D007D8512 /* Scene01Mill.sks in Resources */ = {isa = PBXBuildFile; fileRef = E62C156B1CD3BE4D007D8512 /* Scene01Mill.sks */; };
+		E62C156C1CD3BE4D007D8512 /* MillScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E62C156B1CD3BE4D007D8512 /* MillScene.sks */; };
 		E634BFA71CD2708100B26892 /* PopupMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E634BFA61CD2708100B26892 /* PopupMenuViewController.swift */; };
+		E67B13011CD97864009C1EC0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B13001CD97864009C1EC0 /* MainViewController.swift */; };
 		E6D42E021CD822EA00AA9632 /* CircleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6D42E001CD822EA00AA9632 /* CircleParticle.sks */; };
 		E6D42E061CD8261A00AA9632 /* SpiralParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */; };
 /* End PBXBuildFile section */
@@ -29,13 +30,14 @@
 		E60EE4EE1CD1999D00CB0DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60EE4F01CD1999D00CB0DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E60EE4F21CD1999D00CB0DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E60EE4F41CD1999D00CB0DBA /* ArtBoardScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtBoardScene.swift; sourceTree = "<group>"; };
+		E60EE4F41CD1999D00CB0DBA /* MillScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillScene.swift; sourceTree = "<group>"; };
 		E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillViewController.swift; sourceTree = "<group>"; };
 		E60EE4F61CD1999D00CB0DBA /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E60EE4F71CD1999D00CB0DBA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E62C156B1CD3BE4D007D8512 /* Scene01Mill.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene01Mill.sks; sourceTree = "<group>"; };
+		E62C156B1CD3BE4D007D8512 /* MillScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MillScene.sks; sourceTree = "<group>"; };
 		E634BFA61CD2708100B26892 /* PopupMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuViewController.swift; sourceTree = "<group>"; };
 		E63F30291CCD683B0024ACE4 /* Collider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E67B13001CD97864009C1EC0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E6D42E001CD822EA00AA9632 /* CircleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CircleParticle.sks; sourceTree = "<group>"; };
 		E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpiralParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,15 +67,16 @@
 			isa = PBXGroup;
 			children = (
 				E60EE4ED1CD1999D00CB0DBA /* AppDelegate.swift */,
-				E60EE4F41CD1999D00CB0DBA /* ArtBoardScene.swift */,
+				E67B13001CD97864009C1EC0 /* MainViewController.swift */,
 				E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */,
+				E60EE4F41CD1999D00CB0DBA /* MillScene.swift */,
+				E62C156B1CD3BE4D007D8512 /* MillScene.sks */,
 				E634BFA61CD2708100B26892 /* PopupMenuViewController.swift */,
 				E60EE4F61CD1999D00CB0DBA /* Helper.swift */,
 				E60EE4F11CD1999D00CB0DBA /* Main.storyboard */,
 				E60EE4EE1CD1999D00CB0DBA /* Assets.xcassets */,
 				E60EE4EF1CD1999D00CB0DBA /* LaunchScreen.storyboard */,
 				E60EE4F71CD1999D00CB0DBA /* Info.plist */,
-				E62C156B1CD3BE4D007D8512 /* Scene01Mill.sks */,
 				E6D42E001CD822EA00AA9632 /* CircleParticle.sks */,
 				E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */,
 			);
@@ -171,7 +174,7 @@
 				E6D42E061CD8261A00AA9632 /* SpiralParticle.sks in Resources */,
 				E60EE4FB1CD1999D00CB0DBA /* LaunchScreen.storyboard in Resources */,
 				E60EE4FC1CD1999D00CB0DBA /* Main.storyboard in Resources */,
-				E62C156C1CD3BE4D007D8512 /* Scene01Mill.sks in Resources */,
+				E62C156C1CD3BE4D007D8512 /* MillScene.sks in Resources */,
 				E60EE4FA1CD1999D00CB0DBA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,7 +236,8 @@
 			files = (
 				E60EE4FF1CD1999D00CB0DBA /* MillViewController.swift in Sources */,
 				E634BFA71CD2708100B26892 /* PopupMenuViewController.swift in Sources */,
-				E60EE4FE1CD1999D00CB0DBA /* ArtBoardScene.swift in Sources */,
+				E60EE4FE1CD1999D00CB0DBA /* MillScene.swift in Sources */,
+				E67B13011CD97864009C1EC0 /* MainViewController.swift in Sources */,
 				E60EE4F91CD1999D00CB0DBA /* AppDelegate.swift in Sources */,
 				E60EE5001CD1999D00CB0DBA /* Helper.swift in Sources */,
 			);

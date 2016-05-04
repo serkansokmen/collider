@@ -3,24 +3,50 @@ import SpriteKit
 import C4
 
 
-enum ParticleType {
+enum ParticleBodyType {
     case Circle, Rectangle, Rounded
+    
+    func description() -> String {
+        switch self {
+        case .Circle:
+            return "circle"
+        case .Rectangle:
+            return "rectangle"
+        case .Rounded:
+            return "rounded"
+        }
+    }
 }
 
 
 class MillViewController: UIViewController {
     
     var lastRotation = CGFloat(0.0)
-    let scenes = ["Scene01Mill.sks"]
     var skView: SKView! = nil
     
     @IBAction func longPressed(sender: UILongPressGestureRecognizer) {
-        let ac = UIAlertController(title: "Layout", message: nil, preferredStyle: .ActionSheet)
-        for fileName in scenes {
-            ac.addAction(UIAlertAction(title: fileName, style: .Default, handler: { action in
-                self.presentScene(fileNamed: fileName)
-            }))
-        }
+        let ac = UIAlertController(title: "Select a particle type", message: nil, preferredStyle: .ActionSheet)
+        
+        ac.addAction(UIAlertAction(title: "Circle", style: .Default, handler: { action in
+            if let millScene = self.skView.scene as? MillScene {
+                millScene.particleType = .Circle
+            }
+        }))
+        ac.addAction(UIAlertAction(title: "Rectangle", style: .Default, handler: { action in
+            if let millScene = self.skView.scene as? MillScene {
+                millScene.particleType = .Rectangle
+            }
+        }))
+        ac.addAction(UIAlertAction(title: "Rounded Rectangle", style: .Default, handler: { action in
+            if let millScene = self.skView.scene as? MillScene {
+                millScene.particleType = .Rounded
+            }
+        }))
+        ac.addAction(UIAlertAction(title: "Clear", style: .Default, handler: { action in
+            if let millScene = self.skView.scene as? MillScene {
+                millScene.particles.removeAllChildren()
+            }
+        }))
         
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let popover = ac.popoverPresentationController
@@ -40,7 +66,6 @@ class MillViewController: UIViewController {
         let rotation = 0.0 - (sender.rotation - lastRotation)
         let trans = CGAffineTransformMakeRotation(rotation)
         
-        let skView = self.view as! SKView
         if let skScene = skView.scene {
             let newGravity = CGPointApplyAffineTransform(CGPointMake(skScene.physicsWorld.gravity.dx, skScene.physicsWorld.gravity.dy), trans)
             skScene.physicsWorld.gravity = CGVectorMake(newGravity.x, newGravity.y)
@@ -57,17 +82,13 @@ class MillViewController: UIViewController {
         skView.showsNodeCount = false
         skView.ignoresSiblingOrder = true
         
-        presentScene(fileNamed: scenes[0])
+        let scene = MillScene(fileNamed: "MillScene.sks")
+        scene!.scaleMode = .ResizeFill
+        skView.presentScene(scene)
     }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
-    }
-    
-    func presentScene(fileNamed name: String) {
-        let scene = ArtBoardScene(fileNamed: name)
-        scene!.scaleMode = .ResizeFill
-        skView.presentScene(scene)
     }
     
 }

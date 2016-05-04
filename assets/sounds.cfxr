@@ -32,16 +32,16 @@
         <attribute name="wavetype" type="int16">2</attribute>
         <attribute name="volume" type="float">50</attribute>
         <attribute name="sustaintime" type="float">0.0657</attribute>
-        <attribute name="startfrequency" type="float">0.73268</attribute>
+        <attribute name="startfrequency" type="float">0.8644916</attribute>
         <attribute name="squareduty" type="float">0.11418</attribute>
         <attribute name="slide" type="float">-0.59824</attribute>
         <attribute name="samplerate" type="int32">44100</attribute>
         <attribute name="rating" type="int16">0</attribute>
-        <attribute name="name" type="string">Hit/hurt</attribute>
+        <attribute name="name" type="string">rectangle</attribute>
         <attribute name="lowpassfiltercutoff" type="float">1</attribute>
         <attribute name="index" type="int32">5</attribute>
         <attribute name="highpassfiltercutoff" type="float">0.15609</attribute>
-        <attribute name="decaytime" type="float">0.24776</attribute>
+        <attribute name="decaytime" type="float">0.2246369</attribute>
         <attribute name="bitdepth" type="int16">16</attribute>
         <attribute name="attacktime" type="float">0</attribute>
     </object>
