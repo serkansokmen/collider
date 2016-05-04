@@ -70,10 +70,11 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
                     physics.dynamic = true
                     physics.mass = rand
                     physics.friction = 0.35
+                    physics.restitution = 0.4
                     physics.angularVelocity = 0.75
                     physics.linearDamping = 0.01
                     physics.angularDamping = 0.01
-                    physics.contactTestBitMask = sprite.physicsBody!.collisionBitMask
+                    physics.contactTestBitMask = physics.collisionBitMask
                     
                     physics.velocity = dir
                 }
