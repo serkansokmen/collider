@@ -1,13 +1,12 @@
 import SpriteKit
 import GameKit
 import CoreMotion
-import C4
+import AudioKit
 
 
 class MillScene: SKScene, SKPhysicsContactDelegate {
     
     var motionManager: CMMotionManager!
-    var hitSound: AudioPlayer?
     var particleType: ParticleBodyType = .Circle
     let particles = SKNode()
     
@@ -23,8 +22,6 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
-        
-        hitSound = AudioPlayer("hit.wav")
         
         addChild(particles)
         
@@ -91,9 +88,8 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
     
     
     func didBeginContact(contact: SKPhysicsContact) {
-        if (contact.collisionImpulse > 50.0) {
-            hitSound?.volume = Double(contact.collisionImpulse) / 100.0
-            hitSound?.play()
+        if (contact.collisionImpulse > 1.0) {
+            
         }
     }
 

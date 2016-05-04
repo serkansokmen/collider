@@ -1,6 +1,0 @@
-framework module Pods_Collider {
-  umbrella header "Pods-Collider-umbrella.h"
-
-  export *
-  module * { export * }
-}

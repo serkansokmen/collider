@@ -1,6 +1,0 @@
-framework module C4 {
-  umbrella header "C4-umbrella.h"
-
-  export *
-  module * { export * }
-}
