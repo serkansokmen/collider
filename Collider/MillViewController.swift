@@ -8,7 +8,7 @@ enum ParticleType {
 }
 
 
-class ArtBoardViewController: UIViewController {
+class MillViewController: UIViewController {
     
     var lastRotation = CGFloat(0.0)
     let scenes = ["Scene01Mill.sks"]
