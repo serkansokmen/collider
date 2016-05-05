@@ -53,7 +53,7 @@ class MillViewController: UIViewController {
         popover?.sourceView = view
         popover?.sourceRect = CGRect(x: screenSize.width/2 - 32, y: 32, width: 64, height: 64)
         
-        presentViewController(ac, animated: true, completion: nil)
+        navigationController!.presentViewController(ac, animated: true, completion: nil)
     }
     
     @IBAction func rotated(sender: UIRotationGestureRecognizer) {
@@ -83,7 +83,7 @@ class MillViewController: UIViewController {
         skView.ignoresSiblingOrder = true
         
         let scene = MillScene(fileNamed: "MillScene.sks")
-        scene!.scaleMode = .ResizeFill
+        scene!.scaleMode = .AspectFit
         skView.presentScene(scene)
     }
     
