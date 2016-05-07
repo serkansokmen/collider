@@ -7,13 +7,13 @@ import AudioKit
 class MillScene: SKScene, SKPhysicsContactDelegate {
     
     var motionManager: CMMotionManager!
-    var particleType: ParticleBodyType = .Circle
+    var particleType: MillThrowBodyType = .Circle
     let particles = SKNode()
     
     override func didMoveToView(view: SKView) {
         
         view.ignoresSiblingOrder = false
-         scene?.backgroundColor = UIColor.blackColor()
+        scene?.backgroundColor = UIColor.blackColor()
         
         motionManager = CMMotionManager()
         motionManager.startAccelerometerUpdates()
@@ -42,55 +42,66 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         super.update(currentTime)
         
         if let accelerometerData = motionManager.accelerometerData {
-            physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.y * -5,
+            physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.y * 5,
                                             dy: accelerometerData.acceleration.x * 5)
         }
     }
     
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        for touch in touches {
+//            let location = touch.locationInNode(self)
+//            let touchedNode = nodeAtPoint(location)
+//            touchedNode.zPosition = 15
+//            
+//            let liftUp = SKAction.scaleTo(1.2, duration: 0.2)
+//            touchedNode.runAction(liftUp, withKey: "pickup")
+//        }
+//    }
+//    
+//    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        for touch in touches {
+//            let location = touch.locationInNode(self)
+//            let touchedNode = nodeAtPoint(location)
+//            touchedNode.zPosition = 1
+//            
+//            let dropDown = SKAction.scaleTo(1.0, duration: 0.2)
+//            touchedNode.runAction(dropDown, withKey: "drop")
+//        }
+//    }
+    
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
             
-            let sprite = SKSpriteNode(imageNamed: particleType.description())
             let loc = touch.locationInNode(self)
             let prev = touch.previousLocationInNode(self)
             let dir = CGVector(dx: (loc.x - prev.x) * 7.5,
                                dy: (loc.y - prev.y) * 7.5)
-            
-            sprite.name = particleType.description()
-            sprite.position = touch.locationInNode(self)
-            sprite.zPosition = 1
-            let rand = RandomCGFloat(min: 0.1, max: 0.5)
-            sprite.setScale(rand)
-            
-            if let texture = sprite.texture {
-                sprite.physicsBody = SKPhysicsBody(texture: texture, size: sprite.size)
-                if let physics = sprite.physicsBody {
-                    physics.affectedByGravity = true
-                    physics.allowsRotation = true
-                    physics.dynamic = true
-                    physics.mass = rand
-                    physics.friction = 0.35
-                    physics.restitution = 0.4
-                    physics.angularVelocity = 0.75
-                    physics.linearDamping = 0.01
-                    physics.angularDamping = 0.01
-                    physics.contactTestBitMask = physics.collisionBitMask
-                    
-                    physics.velocity = dir
-                }
-            }
-            particles.addChild(sprite)
+            let body = MillThrowBody(imageNamed: particleType.description())
+            body.position = loc
+            body.physicsBody?.velocity = dir
+            particles.addChild(body)
             
             if particles.children.count > 100 {
-                particles.children[0].removeFromParent()
+                let removeNode = particles.children[0]
+                removeNode.removeFromParent()
+//                let fade = SKAction.fadeAlphaTo(0.0, duration: 0.2)
+//                removeNode.runAction(fade, withKey: "remove")
             }
         }
     }
     
-    
     func didBeginContact(contact: SKPhysicsContact) {
         if (contact.collisionImpulse > 1.0) {
-            
+            if let aNode = contact.bodyA.node as? MillThrowBody {
+                UIView.animateWithDuration(2, animations: { _ in
+                    aNode.color = UIColor.greenColor();
+                })
+            }
+            if let bNode = contact.bodyB.node as? MillThrowBody {
+                UIView.animateWithDuration(2, animations: { _ in
+                    bNode.color = UIColor.redColor();
+                })
+            }
         }
     }
 
