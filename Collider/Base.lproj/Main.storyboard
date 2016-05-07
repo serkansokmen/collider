@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="az9-KL-VQq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -16,15 +16,64 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="88f-BV-kwZ">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="L4x-tH-jFu"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SDy-cz-c3q"/>
+                                    <barButtonItem title="Circle" id="Sf7-Hs-ZN5">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="circleHandler:" destination="BV1-FR-VrT" id="b4o-Wl-4tl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="iSI-BJ-FWb"/>
+                                    <barButtonItem title="Rectangle" id="46Z-SG-1pb">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="rectangleHandler:" destination="BV1-FR-VrT" id="Xe8-s2-KnZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="sDW-fu-9rH"/>
+                                    <barButtonItem title="Rounded" id="AXq-go-cFy">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="roundedHandler:" destination="BV1-FR-VrT" id="sEw-tf-bHw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Sxo-so-kII"/>
+                                    <barButtonItem title="Clear" id="poD-03-LFy">
+                                        <color key="tintColor" red="1" green="0.19488643720000001" blue="0.34206344960000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="clearHandler:" destination="BV1-FR-VrT" id="zEy-zx-Af9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="po5-j8-Y4f"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="88f-BV-kwZ" secondAttribute="bottom" id="SEk-fe-8hO"/>
+                            <constraint firstAttribute="trailing" secondItem="88f-BV-kwZ" secondAttribute="trailing" id="heU-9s-Zbw"/>
+                            <constraint firstItem="88f-BV-kwZ" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="s7t-Kk-gqf"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="bkN-tO-xig" appends="YES" id="UfD-N8-JSd"/>
                             <outletCollection property="gestureRecognizers" destination="ubY-mD-8gw" appends="YES" id="rJG-jE-PlT"/>
+                            <outletCollection property="gestureRecognizers" destination="toA-sm-heV" appends="YES" id="0an-PQ-dQV"/>
                         </connections>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="322-7v-QUa"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="toolbar" destination="88f-BV-kwZ" id="XbC-61-8VY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <rotationGestureRecognizer id="bkN-tO-xig">
@@ -34,30 +83,12 @@
                 </rotationGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ubY-mD-8gw">
                     <connections>
-                        <action selector="longPressed:" destination="BV1-FR-VrT" id="V2Z-dT-BEj"/>
+                        <action selector="longPressed:" destination="BV1-FR-VrT" id="aP9-LE-MVk"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <pinchGestureRecognizer id="toA-sm-heV"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="-305"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Nau-YT-iET">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="az9-KL-VQq" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="rrw-6Q-6YO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="rootViewController" id="5KE-ca-6Bd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bjD-mg-BRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="430" y="-305"/>
+            <point key="canvasLocation" x="1174" y="-328"/>
         </scene>
     </scenes>
 </document>

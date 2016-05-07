@@ -18,20 +18,35 @@ class MillThrowBody: SKSpriteNode {
         self.name = name
         self.zPosition = 1
         
-        let rand = RandomCGFloat(min: 0.1, max: 0.5)
+        let rand = RandomCGFloat(min: 0.05, max: 0.2)
         setScale(rand)
         
-        self.physicsBody = SKPhysicsBody(texture: texture, size: size)
+        switch name {
+        case MillThrowBodyType.Circle.description():
+            self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.width/2)
+        case MillThrowBodyType.Rectangle.description():
+            self.physicsBody = SKPhysicsBody(rectangleOfSize: self.size)
+        case MillThrowBodyType.Rounded.description():
+            self.physicsBody = SKPhysicsBody(texture: texture, size: self.size)
+        default:
+            break
+        }
+        
+        
         if let physics = self.physicsBody {
+            
+            physics.dynamic = true
             physics.affectedByGravity = true
             physics.allowsRotation = true
-            physics.dynamic = true
-            physics.mass = rand
-            physics.friction = 0.35
-            physics.restitution = 0.4
+            
+            physics.density = rand
+            physics.friction = 0.85
+            physics.restitution = 0.25
+            
             physics.angularVelocity = 0.75
-            physics.linearDamping = 0.01
             physics.angularDamping = 0.01
+            physics.linearDamping = 0.01
+            
             physics.contactTestBitMask = physics.collisionBitMask
         }
     }
