@@ -3,7 +3,7 @@ import GameKit
 import CoreMotion
 
 
-class MillScene: SKScene, SKPhysicsContactDelegate, BodyTypeSelectionDelegate {
+class MillScene: SKScene, SKPhysicsContactDelegate {
     
     var motionManager: CMMotionManager!
     var particleType: MillThrowBodyType? = nil

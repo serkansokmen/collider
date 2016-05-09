@@ -6,7 +6,4 @@ use_frameworks!
 
 target 'Collider' do
     pod 'AudioKit'
-    pod 'ReSwift'
-    pod 'ReSwiftRecorder'
-    pod 'ReSwiftRouter'
 end

@@ -17,10 +17,6 @@ enum MillThrowBodyType {
     }
 }
 
-protocol BodyTypeSelectionDelegate: class {
-    func typeSelected(type: MillThrowBodyType)
-}
-
 
 class MillViewController: UIViewController {
     
@@ -54,7 +50,6 @@ class MillViewController: UIViewController {
             millScene.particles.removeAllChildren()
         }
     }
-    
     
     @IBAction func rotated(sender: UIRotationGestureRecognizer) {
         

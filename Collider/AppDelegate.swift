@@ -1,15 +1,9 @@
 import UIKit
-import ReSwift
-import ReSwiftRouter
 
-
-struct AppState: StateType {
-    var counter: Int = 0
-}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
 
 
