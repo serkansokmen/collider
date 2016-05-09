@@ -1,10 +1,12 @@
 # define a global platform
 platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
 # using Swift
 use_frameworks!
 
 target 'Collider' do
-    pod 'C4', '~> 1.0'
-    pod 'pop', '~> 1.0'
-    pod 'AudioKit', '~> 3.1'
+    pod 'AudioKit'
+    pod 'ReSwift'
+    pod 'ReSwiftRecorder'
+    pod 'ReSwiftRouter'
 end

@@ -1,18 +1,23 @@
 PODS:
   - AudioKit (3.1.1)
-  - C4 (1.1.0)
-  - pop (1.0.9)
+  - ReSwift (1.0.0)
+  - ReSwiftRecorder (0.2.5):
+    - ReSwift (~> 1.0.0)
+  - ReSwiftRouter (0.2.7):
+    - ReSwift (~> 1.0)
 
 DEPENDENCIES:
-  - AudioKit (~> 3.1)
-  - C4 (~> 1.0)
-  - pop (~> 1.0)
+  - AudioKit
+  - ReSwift
+  - ReSwiftRecorder
+  - ReSwiftRouter
 
 SPEC CHECKSUMS:
   AudioKit: d8382faede0949504af099e13e2df5dbb0dc12c4
-  C4: 376f0283d94033b954972d963bf1acdf13eb2a7d
-  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  ReSwift: 2097946852b045bcc04182b63cdab9ab7fc35812
+  ReSwiftRecorder: 579782d0db780363bbe488e7b179ee90e5aaef86
+  ReSwiftRouter: 2fce1ffa55c8d342f25d36875e57bd8fd7f2a24f
 
-PODFILE CHECKSUM: 71181a86ea34ff540bb1fcba4d5bf29b7bcd8453
+PODFILE CHECKSUM: 2731e8446f5b7e42abc3c77632544139d86f699d
 
-COCOAPODS: 1.0.0.beta.6
+COCOAPODS: 1.0.0.rc.2

@@ -35,6 +35,10 @@
 		E60EE4F71CD1999D00CB0DBA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E62C156B1CD3BE4D007D8512 /* MillScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MillScene.sks; sourceTree = "<group>"; };
 		E63F30291CCD683B0024ACE4 /* Collider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E66164C11CE01339002B9D25 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwift/ReSwift.framework"; sourceTree = "<group>"; };
+		E66164C21CE01339002B9D25 /* ReSwiftRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRecorder.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwiftRecorder/ReSwiftRecorder.framework"; sourceTree = "<group>"; };
+		E66164C31CE01339002B9D25 /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwiftRouter/ReSwiftRouter.framework"; sourceTree = "<group>"; };
+		E66164C71CE01368002B9D25 /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/C4/C4.framework"; sourceTree = "<group>"; };
 		E68EB4C01CDAC23F00601305 /* MillThrowBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillThrowBody.swift; sourceTree = "<group>"; };
 		E6D42E001CD822EA00AA9632 /* CircleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CircleParticle.sks; sourceTree = "<group>"; };
 		E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpiralParticle.sks; sourceTree = "<group>"; };
@@ -101,6 +105,10 @@
 		F89390F0520CF976A6FCC012 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E66164C71CE01368002B9D25 /* C4.framework */,
+				E66164C11CE01339002B9D25 /* ReSwift.framework */,
+				E66164C21CE01339002B9D25 /* ReSwiftRecorder.framework */,
+				E66164C31CE01339002B9D25 /* ReSwiftRouter.framework */,
 				1DA3EA7E0A45FA8EC358374B /* Pods_Collider.framework */,
 			);
 			name = Frameworks;
