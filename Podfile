@@ -8,4 +8,3 @@ target 'Collider' do
     pod 'pop', '~> 1.0'
     pod 'AudioKit', '~> 3.1'
 end
-

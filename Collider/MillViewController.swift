@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 import SpriteKit
 import C4
 
@@ -18,11 +18,16 @@ enum MillThrowBodyType {
     }
 }
 
+protocol BodyTypeSelectionDelegate: class {
+    func typeSelected(type: MillThrowBodyType)
+}
+
 
 class MillViewController: UIViewController {
     
     var lastRotation = CGFloat(0.0)
     var skView: SKView! = nil
+    var particleType: MillThrowBodyType = .Circle
     
     @IBOutlet weak var toolbar: UIToolbar!
     
@@ -79,7 +84,8 @@ class MillViewController: UIViewController {
         skView.ignoresSiblingOrder = true
         
         let scene = MillScene(fileNamed: "MillScene.sks")
-        scene!.scaleMode = .AspectFit
+        scene?.scaleMode = .AspectFill
+        scene?.particleType = particleType
         skView.presentScene(scene)
     }
     

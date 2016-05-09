@@ -1,10 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g4A-N7-lar">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Settings-->
+        <scene sceneID="AQ3-Z4-8Rr">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="j1f-tQ-ODB" customClass="SettingsViewController" customModule="Collider" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zpV-fQ-Cvb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Throw Body Type" footerTitle="Select a body type to throw" id="tyK-dL-2lk">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="B4J-HP-rgM">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B4J-HP-rgM" id="Q8Z-uQ-Hfp">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t2Q-Sq-nUH">
+                                                    <rect key="frame" x="52" y="8" width="496" height="29"/>
+                                                    <segments>
+                                                        <segment title="Circles"/>
+                                                        <segment title="Rectangle"/>
+                                                        <segment title="Rounded Rectangles"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="t2Q-Sq-nUH" firstAttribute="leading" secondItem="Q8Z-uQ-Hfp" secondAttribute="leadingMargin" constant="44" id="7KM-cN-uNs"/>
+                                                <constraint firstItem="t2Q-Sq-nUH" firstAttribute="top" secondItem="Q8Z-uQ-Hfp" secondAttribute="topMargin" id="Yjz-s5-wz3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="t2Q-Sq-nUH" secondAttribute="bottom" constant="-0.5" id="nlq-se-lBr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="t2Q-Sq-nUH" secondAttribute="trailing" constant="44" id="vDe-h3-aNy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="j1f-tQ-ODB" id="WM4-WP-5yR"/>
+                            <outlet property="delegate" destination="j1f-tQ-ODB" id="G4G-Vu-ZTD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="SjJ-22-XiD"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pBj-cn-jFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2709" y="-1667"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L7k-RJ-nta">
+            <objects>
+                <navigationController id="w54-YA-0zR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aj6-3m-Whp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="j1f-tQ-ODB" kind="relationship" relationship="rootViewController" id="0pW-V3-jPC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d6e-ak-vyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2062" y="-1667"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="QQL-aK-hpF">
+            <objects>
+                <splitViewController id="g4A-N7-lar" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <segue destination="w54-YA-0zR" kind="relationship" relationship="masterViewController" id="hRD-2c-AjM"/>
+                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="detailViewController" id="cVw-Qq-XQK"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUl-p0-njV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1242" y="-1336"/>
+        </scene>
         <!--Mill View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
@@ -88,7 +170,7 @@
                 </pongPressGestureRecognizer>
                 <pinchGestureRecognizer id="toA-sm-heV"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="-328"/>
+            <point key="canvasLocation" x="2034" y="-994"/>
         </scene>
     </scenes>
 </document>

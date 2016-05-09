@@ -1,4 +1,3 @@
-import UIKit
 import SpriteKit
 
 
@@ -18,7 +17,7 @@ class MillThrowBody: SKSpriteNode {
         self.name = name
         self.zPosition = 1
         
-        let rand = RandomCGFloat(min: 0.05, max: 0.2)
+        let rand = RandomCGFloat(min: 0.1, max: 0.25)
         setScale(rand)
         
         switch name {
