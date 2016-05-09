@@ -2,53 +2,23 @@ import Foundation
 import SpriteKit
 
 
-enum MillThrowBodyType {
-    case Circle, Rectangle, Rounded
-    
-    func description() -> String {
-        switch self {
-        case .Circle:
-            return "circle"
-        case .Rectangle:
-            return "rectangle"
-        case .Rounded:
-            return "rounded"
-        }
-    }
-}
-
-
 class MillViewController: UIViewController {
     
     var lastRotation = CGFloat(0.0)
     var skView: SKView! = nil
-    var particleType: MillThrowBodyType = .Circle
-    
-    @IBOutlet weak var toolbar: UIToolbar!
+    var particleType: String = MillThrowBody.types[0]
     
     @IBAction func longPressed(sender: UILongPressGestureRecognizer) {
         
-        toolbar.hidden = !toolbar.hidden
-    }
-    @IBAction func circleHandler(sender: UIBarButtonItem) {
-        if let millScene = self.skView.scene as? MillScene {
-            millScene.particleType = .Circle
+        let ac = UIAlertController(title: "Particle type", message: nil, preferredStyle: .ActionSheet)
+        for type in MillThrowBody.types {
+            ac.addAction(UIAlertAction(title: type, style: .Default, handler: { _ in
+                if let millScene = self.skView.scene as? MillScene {
+                    millScene.particleType = type
+                }
+            }))
         }
-    }
-    @IBAction func rectangleHandler(sender: UIBarButtonItem) {
-        if let millScene = self.skView.scene as? MillScene {
-            millScene.particleType = .Rectangle
-        }
-    }
-    @IBAction func roundedHandler(sender: UIBarButtonItem) {
-        if let millScene = self.skView.scene as? MillScene {
-            millScene.particleType = .Rounded
-        }
-    }
-    @IBAction func clearHandler(sender: AnyObject) {
-        if let millScene = self.skView.scene as? MillScene {
-            millScene.particles.removeAllChildren()
-        }
+        presentViewController(ac, animated: true, completion: nil)
     }
     
     @IBAction func rotated(sender: UIRotationGestureRecognizer) {
@@ -77,8 +47,9 @@ class MillViewController: UIViewController {
         skView.showsNodeCount = false
         skView.ignoresSiblingOrder = true
         
+//        var sceneName: String = ""
         let scene = MillScene(fileNamed: "MillScene.sks")
-        scene?.scaleMode = .AspectFill
+        scene?.scaleMode = .AspectFit
         scene?.particleType = particleType
         skView.presentScene(scene)
     }

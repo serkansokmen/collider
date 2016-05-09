@@ -6,7 +6,7 @@ import CoreMotion
 class MillScene: SKScene, SKPhysicsContactDelegate {
     
     var motionManager: CMMotionManager!
-    var particleType: MillThrowBodyType? = nil
+    var particleType: String! = ""
     let particles = SKNode()
     
     override func didMoveToView(view: SKView) {
@@ -25,7 +25,7 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         addChild(particles)
     }
     
-    func typeSelected(type: MillThrowBodyType) {
+    func typeSelected(type: String) {
         self.particleType = type
     }
     
@@ -39,8 +39,22 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         super.update(currentTime)
         
         if let accelerometerData = motionManager.accelerometerData {
-            physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.y * 5,
-                                            dy: accelerometerData.acceleration.x * 5)
+            switch UIDevice.currentDevice().orientation {
+            case .Portrait:
+                physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.x * 5,
+                                                dy: accelerometerData.acceleration.y * 5)
+            case .PortraitUpsideDown:
+                physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.x * 5,
+                                                dy: accelerometerData.acceleration.y * -5)
+            case .LandscapeRight:
+                physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.y * 5,
+                                                dy: accelerometerData.acceleration.x * -5)
+            case .LandscapeLeft:
+                physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.y * 5,
+                                                dy: accelerometerData.acceleration.x * 5)
+            default:
+                break
+            }
         }
     }
     
@@ -51,7 +65,7 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
             let prev = touch.previousLocationInNode(self)
             let dir = CGVector(dx: (loc.x - prev.x) * 7.5,
                                dy: (loc.y - prev.y) * 7.5)
-            let body = MillThrowBody(imageNamed: particleType!.description())
+            let body = MillThrowBody(imageNamed: particleType)
             body.position = loc
             body.physicsBody?.velocity = dir
             particles.addChild(body)
