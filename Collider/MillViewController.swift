@@ -10,15 +10,18 @@ class MillViewController: UIViewController {
     
     @IBAction func longPressed(sender: UILongPressGestureRecognizer) {
         
-        let ac = UIAlertController(title: "Particle type", message: nil, preferredStyle: .ActionSheet)
-        for type in MillThrowBody.types {
-            ac.addAction(UIAlertAction(title: type, style: .Default, handler: { _ in
-                if let millScene = self.skView.scene as? MillScene {
-                    millScene.particleType = type
-                }
-            }))
+        if let millScene = self.skView.scene as? MillScene {
+            let ac = UIAlertController(title: "Particle type", message: nil, preferredStyle: .ActionSheet)
+            for type in MillThrowBody.types {
+                ac.addAction(UIAlertAction(title: type, style: .Default, handler: { (action) in
+                    millScene.particleType = action.title?.lowercaseString
+                }))
+            }
+            ac.popoverPresentationController?.sourceView = self.view
+            ac.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+            
+            presentViewController(ac, animated: true, completion: nil)
         }
-        presentViewController(ac, animated: true, completion: nil)
     }
     
     @IBAction func rotated(sender: UIRotationGestureRecognizer) {
