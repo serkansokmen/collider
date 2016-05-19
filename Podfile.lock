@@ -1,18 +1,15 @@
 PODS:
-  - AudioKit (3.1.1)
+  - AudioKit (3.1.2)
   - C4 (1.1.0)
-  - pop (1.0.9)
 
 DEPENDENCIES:
-  - AudioKit (~> 3.1)
-  - C4 (~> 1.0)
-  - pop (~> 1.0)
+  - AudioKit
+  - C4
 
 SPEC CHECKSUMS:
-  AudioKit: d8382faede0949504af099e13e2df5dbb0dc12c4
+  AudioKit: 39a1b9e8f33c2af9a8b5de6e97b0d595effe4c5c
   C4: 376f0283d94033b954972d963bf1acdf13eb2a7d
-  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-PODFILE CHECKSUM: 71181a86ea34ff540bb1fcba4d5bf29b7bcd8453
+PODFILE CHECKSUM: 0a31a799c67f88ff1b478d55e589468159c87ed1
 
-COCOAPODS: 1.0.0.beta.6
+COCOAPODS: 1.0.0.rc.2

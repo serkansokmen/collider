@@ -1,37 +1,30 @@
-import UIKit
 import SpriteKit
+import GameKit
+import AudioKit
 
 
 class MillThrowBody: SKSpriteNode {
+    
+    let collisionSound = AKDrip(intensity: 1)
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(imageNamed name: String) {
+    init(withImage image: UIImage) {
         
-        let texture = SKTexture(imageNamed: name)
+        let texture = SKTexture(image: image)
         super.init(texture: texture,
                    color: UIColor.whiteColor(),
                    size: texture.size())
         
         self.name = name
         self.zPosition = 1
+        let rand = RandomCGFloat(min: 0.6, max: 1.0)
+        self.xScale = rand
+        self.yScale = rand
         
-        let rand = RandomCGFloat(min: 0.05, max: 0.2)
-        setScale(rand)
-        
-        switch name {
-        case MillThrowBodyType.Circle.description():
-            self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.width/2)
-        case MillThrowBodyType.Rectangle.description():
-            self.physicsBody = SKPhysicsBody(rectangleOfSize: self.size)
-        case MillThrowBodyType.Rounded.description():
-            self.physicsBody = SKPhysicsBody(texture: texture, size: self.size)
-        default:
-            break
-        }
-        
+        self.physicsBody = SKPhysicsBody(texture: texture, size: self.size)
         
         if let physics = self.physicsBody {
             
@@ -39,7 +32,7 @@ class MillThrowBody: SKSpriteNode {
             physics.affectedByGravity = true
             physics.allowsRotation = true
             
-            physics.density = rand
+            physics.density = min(xScale, yScale)
             physics.friction = 0.85
             physics.restitution = 0.25
             
