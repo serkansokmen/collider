@@ -15,8 +15,11 @@
 		E60EE4FE1CD1999D00CB0DBA /* MillScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4F41CD1999D00CB0DBA /* MillScene.swift */; };
 		E60EE4FF1CD1999D00CB0DBA /* MillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */; };
 		E60EE5001CD1999D00CB0DBA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4F61CD1999D00CB0DBA /* Helper.swift */; };
-		E62C156C1CD3BE4D007D8512 /* MillScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E62C156B1CD3BE4D007D8512 /* MillScene.sks */; };
+		E611EB821CE406A600A8C7C0 /* MillObstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611EB811CE406A600A8C7C0 /* MillObstacle.swift */; };
+		E611EB841CE4147E00A8C7C0 /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E611EB831CE4147E00A8C7C0 /* hit.wav */; };
+		E62F8AC01CE1657500FED31C /* Shader01.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E62F8ABF1CE1657500FED31C /* Shader01.fsh */; };
 		E68EB4C11CDAC23F00601305 /* MillThrowBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68EB4C01CDAC23F00601305 /* MillThrowBody.swift */; };
+		E6B03F911CEBFCE2003884B7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B03F901CEBFCE2003884B7 /* SettingsViewController.swift */; };
 		E6D42E021CD822EA00AA9632 /* CircleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6D42E001CD822EA00AA9632 /* CircleParticle.sks */; };
 		E6D42E061CD8261A00AA9632 /* SpiralParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */; };
 /* End PBXBuildFile section */
@@ -33,13 +36,16 @@
 		E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillViewController.swift; sourceTree = "<group>"; };
 		E60EE4F61CD1999D00CB0DBA /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E60EE4F71CD1999D00CB0DBA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E62C156B1CD3BE4D007D8512 /* MillScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MillScene.sks; sourceTree = "<group>"; };
+		E611EB811CE406A600A8C7C0 /* MillObstacle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillObstacle.swift; sourceTree = "<group>"; };
+		E611EB831CE4147E00A8C7C0 /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hit.wav; path = assets/hit.wav; sourceTree = SOURCE_ROOT; };
+		E62F8ABF1CE1657500FED31C /* Shader01.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader01.fsh; sourceTree = "<group>"; };
 		E63F30291CCD683B0024ACE4 /* Collider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66164C11CE01339002B9D25 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwift/ReSwift.framework"; sourceTree = "<group>"; };
 		E66164C21CE01339002B9D25 /* ReSwiftRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRecorder.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwiftRecorder/ReSwiftRecorder.framework"; sourceTree = "<group>"; };
 		E66164C31CE01339002B9D25 /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwiftRouter/ReSwiftRouter.framework"; sourceTree = "<group>"; };
 		E66164C71CE01368002B9D25 /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/C4/C4.framework"; sourceTree = "<group>"; };
 		E68EB4C01CDAC23F00601305 /* MillThrowBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillThrowBody.swift; sourceTree = "<group>"; };
+		E6B03F901CEBFCE2003884B7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E6D42E001CD822EA00AA9632 /* CircleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CircleParticle.sks; sourceTree = "<group>"; };
 		E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpiralParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,8 +77,9 @@
 				E60EE4ED1CD1999D00CB0DBA /* AppDelegate.swift */,
 				E60EE4F41CD1999D00CB0DBA /* MillScene.swift */,
 				E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */,
-				E62C156B1CD3BE4D007D8512 /* MillScene.sks */,
+				E6B03F901CEBFCE2003884B7 /* SettingsViewController.swift */,
 				E68EB4C01CDAC23F00601305 /* MillThrowBody.swift */,
+				E611EB811CE406A600A8C7C0 /* MillObstacle.swift */,
 				E60EE4F61CD1999D00CB0DBA /* Helper.swift */,
 				E60EE4F11CD1999D00CB0DBA /* Main.storyboard */,
 				E60EE4EE1CD1999D00CB0DBA /* Assets.xcassets */,
@@ -80,6 +87,8 @@
 				E60EE4F71CD1999D00CB0DBA /* Info.plist */,
 				E6D42E001CD822EA00AA9632 /* CircleParticle.sks */,
 				E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */,
+				E62F8ABF1CE1657500FED31C /* Shader01.fsh */,
+				E611EB831CE4147E00A8C7C0 /* hit.wav */,
 			);
 			path = Collider;
 			sourceTree = "<group>";
@@ -175,11 +184,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E611EB841CE4147E00A8C7C0 /* hit.wav in Resources */,
 				E6D42E021CD822EA00AA9632 /* CircleParticle.sks in Resources */,
 				E6D42E061CD8261A00AA9632 /* SpiralParticle.sks in Resources */,
 				E60EE4FB1CD1999D00CB0DBA /* LaunchScreen.storyboard in Resources */,
 				E60EE4FC1CD1999D00CB0DBA /* Main.storyboard in Resources */,
-				E62C156C1CD3BE4D007D8512 /* MillScene.sks in Resources */,
+				E62F8AC01CE1657500FED31C /* Shader01.fsh in Resources */,
 				E60EE4FA1CD1999D00CB0DBA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +251,8 @@
 			files = (
 				E60EE4FF1CD1999D00CB0DBA /* MillViewController.swift in Sources */,
 				E60EE4FE1CD1999D00CB0DBA /* MillScene.swift in Sources */,
+				E6B03F911CEBFCE2003884B7 /* SettingsViewController.swift in Sources */,
+				E611EB821CE406A600A8C7C0 /* MillObstacle.swift in Sources */,
 				E60EE4F91CD1999D00CB0DBA /* AppDelegate.swift in Sources */,
 				E60EE5001CD1999D00CB0DBA /* Helper.swift in Sources */,
 				E68EB4C11CDAC23F00601305 /* MillThrowBody.swift in Sources */,

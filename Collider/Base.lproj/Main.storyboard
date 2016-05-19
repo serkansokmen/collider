@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Mill View Controller-->
@@ -16,14 +17,109 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="bgG-hR-SbD">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uKU-Ba-znt"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="67r-f8-G0r"/>
+                                    <barButtonItem image="triangle-sm" id="sEo-tu-Y0E">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="handleTypeTapped:" destination="BV1-FR-VrT" id="yQr-fn-sSh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="pentagon-sm" id="7Tk-Ha-6wX">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="handleTypeTapped:" destination="BV1-FR-VrT" id="Hes-yZ-UBt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="square-sm" id="f5d-Mk-AzW">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="handleTypeTapped:" destination="BV1-FR-VrT" id="a5U-KT-AQ6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="circle-sm" id="4ly-3W-Asf">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="handleTypeTapped:" destination="BV1-FR-VrT" id="gID-8c-Xpo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="cross-sm" id="jFO-o7-efP">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="handleTypeTapped:" destination="BV1-FR-VrT" id="Ijm-jZ-qEw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="rounded-sm" id="aUN-Pd-U5z">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="handleTypeTapped:" destination="BV1-FR-VrT" id="EZe-Cv-b2t"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="KMf-J1-2ML"/>
+                                    <barButtonItem image="clear-sm" id="fbE-qa-zin">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="handleClearParticles:" destination="BV1-FR-VrT" id="L7T-wU-ToJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="6SP-Rd-UOV"/>
+                                    <barButtonItem image="mill-sm" id="jE6-p4-cvu">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="handleMillObstacle:" destination="BV1-FR-VrT" id="y3f-X6-Cq3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="spiral-sm" id="pI7-tS-wPv">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="handleSpiralObstacle:" destination="BV1-FR-VrT" id="NkK-Jp-b1o"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="WiK-wP-Zb5"/>
+                                    <barButtonItem image="clear-sm" id="fgb-Fx-hey">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="handleClearObstacles:" destination="BV1-FR-VrT" id="qY9-uH-mNK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="YbZ-br-MgV"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="bgG-hR-SbD" secondAttribute="trailing" constant="-20" id="7ap-GB-xsV"/>
+                            <constraint firstItem="bgG-hR-SbD" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="topMargin" id="lPb-f3-mdo"/>
+                            <constraint firstItem="bgG-hR-SbD" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="-20" id="ueg-bh-GwN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7ap-GB-xsV"/>
+                                <exclude reference="lPb-f3-mdo"/>
+                                <exclude reference="ueg-bh-GwN"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="7ap-GB-xsV"/>
+                                <include reference="lPb-f3-mdo"/>
+                                <include reference="ueg-bh-GwN"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="bkN-tO-xig" appends="YES" id="UfD-N8-JSd"/>
-                            <outletCollection property="gestureRecognizers" destination="ubY-mD-8gw" appends="YES" id="rJG-jE-PlT"/>
                         </connections>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="b96-xX-52P"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -32,13 +128,56 @@
                         <action selector="rotated:" destination="BV1-FR-VrT" id="0zQ-7l-1IR"/>
                     </connections>
                 </rotationGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ubY-mD-8gw">
-                    <connections>
-                        <action selector="longPressed:" destination="BV1-FR-VrT" id="aP9-LE-MVk"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2034" y="-994"/>
+            <point key="canvasLocation" x="2846" y="-994"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="mhs-i3-Yro">
+            <objects>
+                <viewController id="tFD-bA-6Wi" customClass="SettingsViewController" customModule="Collider" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xhA-8m-yAE"/>
+                        <viewControllerLayoutGuide type="bottom" id="dEO-L2-8PO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jxa-3u-eah">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zoi-93-RA2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfx-cp-5qx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4289" y="-1006"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AfQ-Bg-slG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fyR-qg-koH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GKV-Sg-j0N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tFD-bA-6Wi" kind="relationship" relationship="rootViewController" id="cjy-FI-Zve"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwp-sV-sKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3515" y="-994"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="circle-sm" width="25" height="25"/>
+        <image name="clear-sm" width="21" height="22"/>
+        <image name="cross-sm" width="27" height="27"/>
+        <image name="mill-sm" width="27" height="27"/>
+        <image name="pentagon-sm" width="27" height="25"/>
+        <image name="rounded-sm" width="25" height="25"/>
+        <image name="spiral-sm" width="26" height="18"/>
+        <image name="square-sm" width="25" height="25"/>
+        <image name="triangle-sm" width="29" height="29"/>
+    </resources>
 </document>

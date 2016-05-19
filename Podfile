@@ -6,4 +6,5 @@ use_frameworks!
 
 target 'Collider' do
     pod 'AudioKit'
+    pod 'C4'
 end
