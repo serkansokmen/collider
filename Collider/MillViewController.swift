@@ -1,22 +1,5 @@
 import UIKit
 import SpriteKit
-import C4
-
-
-enum ParticleBodyType {
-    case Circle, Rectangle, Rounded
-    
-    func description() -> String {
-        switch self {
-        case .Circle:
-            return "circle"
-        case .Rectangle:
-            return "rectangle"
-        case .Rounded:
-            return "rounded"
-        }
-    }
-}
 
 
 class MillViewController: UIViewController {
@@ -24,36 +7,56 @@ class MillViewController: UIViewController {
     var lastRotation = CGFloat(0.0)
     var skView: SKView! = nil
     
-    @IBAction func longPressed(sender: UILongPressGestureRecognizer) {
-        let ac = UIAlertController(title: "Select a particle type", message: nil, preferredStyle: .ActionSheet)
+    @IBAction func handleMillObstacle(sender: UIBarButtonItem) {
+        if let millScene = self.skView.scene as? MillScene {
+            let obstacleImage = UIImage(named: "mill")
+            millScene.addObstacle(withImage: obstacleImage!,
+                                  atPosition: CGPointMake(view.frame.width/2, view.frame.height/2))
+        }
+    }
+    @IBAction func handleSpiralObstacle(sender: UIBarButtonItem) {
+        if let millScene = self.skView.scene as? MillScene {
+            let obstacleImage = UIImage(named: "spiral")
+            millScene.addObstacle(withImage: obstacleImage!,
+                                  atPosition: CGPointMake(view.frame.width/2, view.frame.height/2))
+        }
+    }
+    @IBAction func handleClearParticles(sender: UIBarButtonItem) {
+        if let millScene = self.skView.scene as? MillScene {
+            millScene.particles.removeAllActions()
+            millScene.particles.removeAllChildren()
+        }
+    }
+    @IBAction func handleClearObstacles(sender: UIBarButtonItem) {
+        if let millScene = self.skView.scene as? MillScene {
+            millScene.obstacles.removeAllActions()
+            millScene.obstacles.removeAllChildren()
+        }
+    }
+    
+    @IBAction func handleTypeTapped(sender: UIBarButtonItem) {
         
-        ac.addAction(UIAlertAction(title: "Circle", style: .Default, handler: { action in
-            if let millScene = self.skView.scene as? MillScene {
-                millScene.particleType = .Circle
-            }
-        }))
-        ac.addAction(UIAlertAction(title: "Rectangle", style: .Default, handler: { action in
-            if let millScene = self.skView.scene as? MillScene {
-                millScene.particleType = .Rectangle
-            }
-        }))
-        ac.addAction(UIAlertAction(title: "Rounded Rectangle", style: .Default, handler: { action in
-            if let millScene = self.skView.scene as? MillScene {
-                millScene.particleType = .Rounded
-            }
-        }))
-        ac.addAction(UIAlertAction(title: "Clear", style: .Default, handler: { action in
-            if let millScene = self.skView.scene as? MillScene {
-                millScene.particles.removeAllChildren()
-            }
-        }))
-        
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        let popover = ac.popoverPresentationController
-        popover?.sourceView = view
-        popover?.sourceRect = CGRect(x: screenSize.width/2 - 32, y: 32, width: 64, height: 64)
-        
-        presentViewController(ac, animated: true, completion: nil)
+//        let ac = UIAlertController(title: nil, message: "Options", preferredStyle: .ActionSheet)
+//        
+        if let millScene = self.skView.scene as? MillScene {
+            millScene.particleImage = sender.image
+//            for type in MillThrowBody.types {
+//                let typeAction = UIAlertAction(title: type.capitalizedString, style: .Default, handler: { action in
+//                    millScene.particleType = action.title?.lowercaseString
+//                })
+//                ac.addAction(typeAction)
+//            }
+//            
+//            let clearAction = UIAlertAction(title: "Clear", style: .Default, handler: { _ in
+//                millScene.particles.removeAllChildren()
+//                self.dismissViewControllerAnimated(true, completion: nil)
+//            })
+//            ac.addAction(clearAction)
+//            ac.popoverPresentationController?.sourceView = self.view
+//            ac.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+//            
+//            presentViewController(ac, animated: true, completion: nil)
+        }
     }
     
     @IBAction func rotated(sender: UIRotationGestureRecognizer) {
@@ -67,7 +70,7 @@ class MillViewController: UIViewController {
         let trans = CGAffineTransformMakeRotation(rotation)
         
         if let skScene = skView.scene {
-            let newGravity = CGPointApplyAffineTransform(CGPointMake(skScene.physicsWorld.gravity.dx, skScene.physicsWorld.gravity.dy), trans)
+            let newGravity = CGPointApplyAffineTransform(CGPointMake(skScene.physicsWorld.gravity.dy, skScene.physicsWorld.gravity.dx), trans)
             skScene.physicsWorld.gravity = CGVectorMake(newGravity.x, newGravity.y)
         }
         
@@ -82,8 +85,9 @@ class MillViewController: UIViewController {
         skView.showsNodeCount = false
         skView.ignoresSiblingOrder = true
         
-        let scene = MillScene(fileNamed: "MillScene.sks")
-        scene!.scaleMode = .ResizeFill
+        let scene = MillScene(size: view.frame.size)
+        scene.scaleMode = .AspectFit
+        scene.particleImage = UIImage(named: "circle-sm")
         skView.presentScene(scene)
     }
     
