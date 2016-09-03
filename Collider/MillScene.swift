@@ -101,11 +101,11 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         activeSliceFG.runAction(SKAction.fadeOutWithDuration(0.25))
     }
     
-    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-        if let touches = touches {
-            self.touchesEnded(touches, withEvent: event)
-        }
-    }
+//    override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        if let touches = touches {
+//            self.touchesEnded(touches, withEvent: event)
+//        }
+//    }
     
     func didBeginContact(contact: SKPhysicsContact) {
 //        if (contact.collisionImpulse > 0.1) {

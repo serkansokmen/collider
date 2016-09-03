@@ -5,7 +5,8 @@ import SpriteKit
 class MillViewController: UIViewController {
     
     var lastRotation = CGFloat(0.0)
-    var skView: SKView! = nil
+    
+    @IBOutlet weak var skView: SKView!
     
     @IBAction func handleMillObstacle(sender: UIBarButtonItem) {
         if let millScene = self.skView.scene as? MillScene {
@@ -77,15 +78,14 @@ class MillViewController: UIViewController {
         lastRotation = sender.rotation
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        skView = view as! SKView
         skView.showsFPS = false
         skView.showsNodeCount = false
         skView.ignoresSiblingOrder = true
         
-        let scene = MillScene(size: view.frame.size)
+        let scene = MillScene(size: skView.frame.size)
         scene.scaleMode = .AspectFit
         scene.particleImage = UIImage(named: "circle-sm")
         skView.presentScene(scene)
