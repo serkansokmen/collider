@@ -5,6 +5,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'Collider' do
-#    pod 'AudioKit'
+    pod 'AudioKit'
 #    pod 'C4'
 end

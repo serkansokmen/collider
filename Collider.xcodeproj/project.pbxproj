@@ -75,20 +75,12 @@
 			isa = PBXGroup;
 			children = (
 				E60EE4ED1CD1999D00CB0DBA /* AppDelegate.swift */,
-				E60EE4F41CD1999D00CB0DBA /* MillScene.swift */,
-				E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */,
-				E6B03F901CEBFCE2003884B7 /* SettingsViewController.swift */,
-				E68EB4C01CDAC23F00601305 /* MillThrowBody.swift */,
-				E611EB811CE406A600A8C7C0 /* MillObstacle.swift */,
+				E6BE3E201D7DE85D004640B1 /* ViewControllers */,
+				E6BE3E211D7DE86E004640B1 /* Nodes */,
 				E60EE4F61CD1999D00CB0DBA /* Helper.swift */,
-				E60EE4F11CD1999D00CB0DBA /* Main.storyboard */,
-				E60EE4EE1CD1999D00CB0DBA /* Assets.xcassets */,
-				E60EE4EF1CD1999D00CB0DBA /* LaunchScreen.storyboard */,
-				E60EE4F71CD1999D00CB0DBA /* Info.plist */,
+				E6BE3E1F1D7DE84C004640B1 /* Assets */,
 				E6D42E001CD822EA00AA9632 /* CircleParticle.sks */,
 				E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */,
-				E62F8ABF1CE1657500FED31C /* Shader01.fsh */,
-				E611EB831CE4147E00A8C7C0 /* hit.wav */,
 			);
 			path = Collider;
 			sourceTree = "<group>";
@@ -109,6 +101,38 @@
 				E63F30291CCD683B0024ACE4 /* Collider.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E6BE3E1F1D7DE84C004640B1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E60EE4F11CD1999D00CB0DBA /* Main.storyboard */,
+				E60EE4EE1CD1999D00CB0DBA /* Assets.xcassets */,
+				E60EE4EF1CD1999D00CB0DBA /* LaunchScreen.storyboard */,
+				E60EE4F71CD1999D00CB0DBA /* Info.plist */,
+				E62F8ABF1CE1657500FED31C /* Shader01.fsh */,
+				E611EB831CE4147E00A8C7C0 /* hit.wav */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		E6BE3E201D7DE85D004640B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E60EE4F41CD1999D00CB0DBA /* MillScene.swift */,
+				E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */,
+				E6B03F901CEBFCE2003884B7 /* SettingsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E6BE3E211D7DE86E004640B1 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				E68EB4C01CDAC23F00601305 /* MillThrowBody.swift */,
+				E611EB811CE406A600A8C7C0 /* MillObstacle.swift */,
+			);
+			name = Nodes;
 			sourceTree = "<group>";
 		};
 		F89390F0520CF976A6FCC012 /* Frameworks */ = {

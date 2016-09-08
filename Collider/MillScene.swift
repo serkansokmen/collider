@@ -101,19 +101,13 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         activeSliceFG.runAction(SKAction.fadeOutWithDuration(0.25))
     }
     
-//    override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        if let touches = touches {
-//            self.touchesEnded(touches, withEvent: event)
-//        }
-//    }
-    
     func didBeginContact(contact: SKPhysicsContact) {
-//        if (contact.collisionImpulse > 0.1) {
-//            if let aNode = contact.bodyA.node as? MillThrowBody,
-//                let bNode = contact.bodyB.node as? MillThrowBody {
-//                
-//            }
-//        }
+        if (contact.collisionImpulse > 0.1) {
+            if let aNode = contact.bodyA.node as? MillThrowBody,
+                let bNode = contact.bodyB.node as? MillThrowBody {
+                print("contact")
+            }
+        }
     }
     
 //    func playLaunchSound() {

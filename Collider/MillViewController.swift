@@ -8,6 +8,9 @@ class MillViewController: UIViewController {
     
     @IBOutlet weak var skView: SKView!
     
+    @IBOutlet var swipeGesture: UISwipeGestureRecognizer!
+    @IBOutlet weak var toolbarTop: NSLayoutConstraint!
+    
     @IBAction func handleMillObstacle(sender: UIBarButtonItem) {
         if let millScene = self.skView.scene as? MillScene {
             let obstacleImage = UIImage(named: "mill")
