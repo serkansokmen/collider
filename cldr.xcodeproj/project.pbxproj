@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16EBC33A3937297A6FC5723C /* Pods_cldr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD991F6B2764C97A2857223B /* Pods_cldr.framework */; };
 		BC29BFEACA3647E3A89BD51E /* Pods_Collider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA3EA7E0A45FA8EC358374B /* Pods_Collider.framework */; };
 		E60EE4F91CD1999D00CB0DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4ED1CD1999D00CB0DBA /* AppDelegate.swift */; };
 		E60EE4FA1CD1999D00CB0DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60EE4EE1CD1999D00CB0DBA /* Assets.xcassets */; };
@@ -18,16 +19,20 @@
 		E611EB821CE406A600A8C7C0 /* MillObstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611EB811CE406A600A8C7C0 /* MillObstacle.swift */; };
 		E611EB841CE4147E00A8C7C0 /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E611EB831CE4147E00A8C7C0 /* hit.wav */; };
 		E62F8AC01CE1657500FED31C /* Shader01.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E62F8ABF1CE1657500FED31C /* Shader01.fsh */; };
+		E6775EAF1D8219170088F143 /* ShapeTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6775EAE1D8219170088F143 /* ShapeTypesViewController.swift */; };
+		E6775EB21D82235C0088F143 /* ShapeTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6775EB11D82235C0088F143 /* ShapeTypeCell.swift */; };
 		E68EB4C11CDAC23F00601305 /* MillThrowBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68EB4C01CDAC23F00601305 /* MillThrowBody.swift */; };
-		E6B03F911CEBFCE2003884B7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B03F901CEBFCE2003884B7 /* SettingsViewController.swift */; };
 		E6D42E021CD822EA00AA9632 /* CircleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6D42E001CD822EA00AA9632 /* CircleParticle.sks */; };
 		E6D42E061CD8261A00AA9632 /* SpiralParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1DA3EA7E0A45FA8EC358374B /* Pods_Collider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Collider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3691DAB38EB14BC75AFEF460 /* Pods-cldr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cldr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cldr/Pods-cldr.debug.xcconfig"; sourceTree = "<group>"; };
+		47BD48B1A0E9C350D1319C35 /* Pods-cldr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cldr.release.xcconfig"; path = "Pods/Target Support Files/Pods-cldr/Pods-cldr.release.xcconfig"; sourceTree = "<group>"; };
 		4A9113610DA303B55C22611F /* Pods-Collider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Collider/Pods-Collider.debug.xcconfig"; sourceTree = "<group>"; };
 		9457D2729F2C0E5862EFBBD8 /* Pods-Collider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collider.release.xcconfig"; path = "Pods/Target Support Files/Pods-Collider/Pods-Collider.release.xcconfig"; sourceTree = "<group>"; };
+		CD991F6B2764C97A2857223B /* Pods_cldr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cldr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60EE4ED1CD1999D00CB0DBA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E60EE4EE1CD1999D00CB0DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60EE4F01CD1999D00CB0DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,13 +44,14 @@
 		E611EB811CE406A600A8C7C0 /* MillObstacle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillObstacle.swift; sourceTree = "<group>"; };
 		E611EB831CE4147E00A8C7C0 /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hit.wav; path = assets/hit.wav; sourceTree = SOURCE_ROOT; };
 		E62F8ABF1CE1657500FED31C /* Shader01.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader01.fsh; sourceTree = "<group>"; };
-		E63F30291CCD683B0024ACE4 /* Collider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E63F30291CCD683B0024ACE4 /* cldr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cldr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66164C11CE01339002B9D25 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwift/ReSwift.framework"; sourceTree = "<group>"; };
 		E66164C21CE01339002B9D25 /* ReSwiftRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRecorder.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwiftRecorder/ReSwiftRecorder.framework"; sourceTree = "<group>"; };
 		E66164C31CE01339002B9D25 /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwiftRouter/ReSwiftRouter.framework"; sourceTree = "<group>"; };
 		E66164C71CE01368002B9D25 /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/C4/C4.framework"; sourceTree = "<group>"; };
+		E6775EAE1D8219170088F143 /* ShapeTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeTypesViewController.swift; sourceTree = "<group>"; };
+		E6775EB11D82235C0088F143 /* ShapeTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeTypeCell.swift; sourceTree = "<group>"; };
 		E68EB4C01CDAC23F00601305 /* MillThrowBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillThrowBody.swift; sourceTree = "<group>"; };
-		E6B03F901CEBFCE2003884B7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E6D42E001CD822EA00AA9632 /* CircleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CircleParticle.sks; sourceTree = "<group>"; };
 		E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpiralParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC29BFEACA3647E3A89BD51E /* Pods_Collider.framework in Frameworks */,
+				16EBC33A3937297A6FC5723C /* Pods_cldr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +74,8 @@
 			children = (
 				4A9113610DA303B55C22611F /* Pods-Collider.debug.xcconfig */,
 				9457D2729F2C0E5862EFBBD8 /* Pods-Collider.release.xcconfig */,
+				3691DAB38EB14BC75AFEF460 /* Pods-cldr.debug.xcconfig */,
+				47BD48B1A0E9C350D1319C35 /* Pods-cldr.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -77,8 +86,8 @@
 				E60EE4ED1CD1999D00CB0DBA /* AppDelegate.swift */,
 				E6BE3E201D7DE85D004640B1 /* ViewControllers */,
 				E6BE3E211D7DE86E004640B1 /* Nodes */,
-				E60EE4F61CD1999D00CB0DBA /* Helper.swift */,
 				E6BE3E1F1D7DE84C004640B1 /* Assets */,
+				E60EE4F61CD1999D00CB0DBA /* Helper.swift */,
 				E6D42E001CD822EA00AA9632 /* CircleParticle.sks */,
 				E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */,
 			);
@@ -98,7 +107,7 @@
 		E63F302A1CCD683B0024ACE4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E63F30291CCD683B0024ACE4 /* Collider.app */,
+				E63F30291CCD683B0024ACE4 /* cldr.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,7 +130,8 @@
 			children = (
 				E60EE4F41CD1999D00CB0DBA /* MillScene.swift */,
 				E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */,
-				E6B03F901CEBFCE2003884B7 /* SettingsViewController.swift */,
+				E6775EAE1D8219170088F143 /* ShapeTypesViewController.swift */,
+				E6775EB11D82235C0088F143 /* ShapeTypeCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -143,6 +153,7 @@
 				E66164C21CE01339002B9D25 /* ReSwiftRecorder.framework */,
 				E66164C31CE01339002B9D25 /* ReSwiftRouter.framework */,
 				1DA3EA7E0A45FA8EC358374B /* Pods_Collider.framework */,
+				CD991F6B2764C97A2857223B /* Pods_cldr.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,9 +161,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E63F30281CCD683B0024ACE4 /* Collider */ = {
+		E63F30281CCD683B0024ACE4 /* cldr */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E63F303F1CCD683B0024ACE4 /* Build configuration list for PBXNativeTarget "Collider" */;
+			buildConfigurationList = E63F303F1CCD683B0024ACE4 /* Build configuration list for PBXNativeTarget "cldr" */;
 			buildPhases = (
 				2FBEC30C9BDB8F5ABF5A6B95 /* [CP] Check Pods Manifest.lock */,
 				E63F30251CCD683B0024ACE4 /* Sources */,
@@ -165,9 +176,9 @@
 			);
 			dependencies = (
 			);
-			name = Collider;
+			name = cldr;
 			productName = Collider;
-			productReference = E63F30291CCD683B0024ACE4 /* Collider.app */;
+			productReference = E63F30291CCD683B0024ACE4 /* cldr.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -187,7 +198,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E63F30241CCD683B0024ACE4 /* Build configuration list for PBXProject "Collider" */;
+			buildConfigurationList = E63F30241CCD683B0024ACE4 /* Build configuration list for PBXProject "cldr" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -200,7 +211,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E63F30281CCD683B0024ACE4 /* Collider */,
+				E63F30281CCD683B0024ACE4 /* cldr */,
 			);
 		};
 /* End PBXProject section */
@@ -235,7 +246,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Collider/Pods-Collider-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cldr/Pods-cldr-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2FBEC30C9BDB8F5ABF5A6B95 /* [CP] Check Pods Manifest.lock */ = {
@@ -265,7 +276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Collider/Pods-Collider-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cldr/Pods-cldr-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -277,11 +288,12 @@
 			files = (
 				E60EE4FF1CD1999D00CB0DBA /* MillViewController.swift in Sources */,
 				E60EE4FE1CD1999D00CB0DBA /* MillScene.swift in Sources */,
-				E6B03F911CEBFCE2003884B7 /* SettingsViewController.swift in Sources */,
+				E6775EAF1D8219170088F143 /* ShapeTypesViewController.swift in Sources */,
 				E611EB821CE406A600A8C7C0 /* MillObstacle.swift in Sources */,
 				E60EE4F91CD1999D00CB0DBA /* AppDelegate.swift in Sources */,
 				E60EE5001CD1999D00CB0DBA /* Helper.swift in Sources */,
 				E68EB4C11CDAC23F00601305 /* MillThrowBody.swift in Sources */,
+				E6775EB21D82235C0088F143 /* ShapeTypeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,14 +407,14 @@
 		};
 		E63F30401CCD683B0024ACE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A9113610DA303B55C22611F /* Pods-Collider.debug.xcconfig */;
+			baseConfigurationReference = 3691DAB38EB14BC75AFEF460 /* Pods-cldr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YGQRYMCYG9;
 				INFOPLIST_FILE = Collider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.ofoto.ios.Collider;
-				PRODUCT_NAME = Collider;
+				PRODUCT_NAME = cldr;
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -410,14 +422,14 @@
 		};
 		E63F30411CCD683B0024ACE4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9457D2729F2C0E5862EFBBD8 /* Pods-Collider.release.xcconfig */;
+			baseConfigurationReference = 47BD48B1A0E9C350D1319C35 /* Pods-cldr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YGQRYMCYG9;
 				INFOPLIST_FILE = Collider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.ofoto.ios.Collider;
-				PRODUCT_NAME = Collider;
+				PRODUCT_NAME = cldr;
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -426,7 +438,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E63F30241CCD683B0024ACE4 /* Build configuration list for PBXProject "Collider" */ = {
+		E63F30241CCD683B0024ACE4 /* Build configuration list for PBXProject "cldr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E63F303D1CCD683B0024ACE4 /* Debug */,
@@ -435,7 +447,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E63F303F1CCD683B0024ACE4 /* Build configuration list for PBXNativeTarget "Collider" */ = {
+		E63F303F1CCD683B0024ACE4 /* Build configuration list for PBXNativeTarget "cldr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E63F30401CCD683B0024ACE4 /* Debug */,

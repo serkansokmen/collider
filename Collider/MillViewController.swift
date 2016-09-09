@@ -2,65 +2,47 @@ import UIKit
 import SpriteKit
 
 
-class MillViewController: UIViewController {
+class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTypeDelegate {
     
+    var clearDelegate: ClearTypeDelegate?
     var lastRotation = CGFloat(0.0)
     
     @IBOutlet weak var skView: SKView!
     
-    @IBOutlet var swipeGesture: UISwipeGestureRecognizer!
-    @IBOutlet weak var toolbarTop: NSLayoutConstraint!
+    //MARK: - Settings Popup Delegate
+    func didSelectThrowBodyWithImage(image: UIImage) {
+        if let millScene = self.skView.scene as? MillScene {
+            millScene.particleImage = image
+        }
+    }
+    func didSelectObstacleWithImage(image: UIImage) {
+        if let millScene = self.skView.scene as? MillScene {
+            millScene.addObstacle(withImage: image,
+                                  atPosition: CGPointMake(view.frame.width/2, view.frame.height/2))
+        }
+    }
     
-    @IBAction func handleMillObstacle(sender: UIBarButtonItem) {
-        if let millScene = self.skView.scene as? MillScene {
-            let obstacleImage = UIImage(named: "mill")
-            millScene.addObstacle(withImage: obstacleImage!,
-                                  atPosition: CGPointMake(view.frame.width/2, view.frame.height/2))
-        }
-    }
-    @IBAction func handleSpiralObstacle(sender: UIBarButtonItem) {
-        if let millScene = self.skView.scene as? MillScene {
-            let obstacleImage = UIImage(named: "spiral")
-            millScene.addObstacle(withImage: obstacleImage!,
-                                  atPosition: CGPointMake(view.frame.width/2, view.frame.height/2))
-        }
-    }
-    @IBAction func handleClearParticles(sender: UIBarButtonItem) {
-        if let millScene = self.skView.scene as? MillScene {
-            millScene.particles.removeAllActions()
-            millScene.particles.removeAllChildren()
-        }
-    }
-    @IBAction func handleClearObstacles(sender: UIBarButtonItem) {
+    func didClearObstacles() {
         if let millScene = self.skView.scene as? MillScene {
             millScene.obstacles.removeAllActions()
             millScene.obstacles.removeAllChildren()
         }
     }
     
-    @IBAction func handleTypeTapped(sender: UIBarButtonItem) {
-        
-//        let ac = UIAlertController(title: nil, message: "Options", preferredStyle: .ActionSheet)
-//        
+    func didClearParticles() {
         if let millScene = self.skView.scene as? MillScene {
-            millScene.particleImage = sender.image
-//            for type in MillThrowBody.types {
-//                let typeAction = UIAlertAction(title: type.capitalizedString, style: .Default, handler: { action in
-//                    millScene.particleType = action.title?.lowercaseString
-//                })
-//                ac.addAction(typeAction)
-//            }
-//            
-//            let clearAction = UIAlertAction(title: "Clear", style: .Default, handler: { _ in
-//                millScene.particles.removeAllChildren()
-//                self.dismissViewControllerAnimated(true, completion: nil)
-//            })
-//            ac.addAction(clearAction)
-//            ac.popoverPresentationController?.sourceView = self.view
-//            ac.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
-//            
-//            presentViewController(ac, animated: true, completion: nil)
+            millScene.particles.removeAllActions()
+            millScene.particles.removeAllChildren()
         }
+    }
+    
+    //MARK: - IBActions
+    
+    @IBAction func tappedClearShapes(sender: UIBarButtonItem) {
+        clearDelegate?.didClearParticles()
+    }
+    @IBAction func tappedClearObstacles(sender: UIBarButtonItem) {
+        clearDelegate?.didClearObstacles()
     }
     
     @IBAction func rotated(sender: UIRotationGestureRecognizer) {
@@ -81,6 +63,13 @@ class MillViewController: UIViewController {
         lastRotation = sender.rotation
     }
     
+    //MARK: - View Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        clearDelegate = self
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -96,6 +85,12 @@ class MillViewController: UIViewController {
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? ShapeTypesViewController {
+            vc.delegate = self
+        }
     }
     
 }

@@ -19,7 +19,7 @@ class MillThrowBody: SKSpriteNode {
         
         self.name = name
         self.zPosition = 1
-        let rand = RandomCGFloat(min: 0.6, max: 1.0)
+        let rand = RandomCGFloat(min: 0.15, max: 0.4)
         self.xScale = rand
         self.yScale = rand
         
