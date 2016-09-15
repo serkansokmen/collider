@@ -14,7 +14,7 @@ class MillThrowBody: SKSpriteNode {
         
         let texture = SKTexture(image: image)
         super.init(texture: texture,
-                   color: UIColor.whiteColor(),
+                   color: UIColor.white,
                    size: texture.size())
         
         self.name = name
@@ -27,7 +27,7 @@ class MillThrowBody: SKSpriteNode {
         
         if let physics = self.physicsBody {
             
-            physics.dynamic = true
+            physics.isDynamic = true
             physics.affectedByGravity = true
             physics.allowsRotation = true
             

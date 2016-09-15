@@ -7,7 +7,7 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
     var clearDelegate: ClearTypeDelegate?
     var statusHidden = false {
         didSet {
-            navigationController?.toolbarHidden = statusHidden
+            navigationController?.isToolbarHidden = statusHidden
         }
     }
     var lastRotation = CGFloat(0.0)
@@ -15,15 +15,15 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
     @IBOutlet weak var skView: SKView!
     
     //MARK: - Settings Popup Delegate
-    func didSelectThrowBodyWithImage(image: UIImage) {
+    func didSelectThrowBodyWithImage(_ image: UIImage) {
         if let millScene = self.skView.scene as? MillScene {
             millScene.particleImage = image
         }
     }
-    func didSelectObstacleWithImage(image: UIImage) {
+    func didSelectObstacleWithImage(_ image: UIImage) {
         if let millScene = self.skView.scene as? MillScene {
             millScene.addObstacle(withImage: image,
-                                  atPosition: CGPointMake(view.frame.width/2, view.frame.height/2))
+                                  atPosition: CGPoint(x: view.frame.width/2, y: view.frame.height/2))
         }
     }
     
@@ -43,26 +43,26 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
     
     //MARK: - IBActions
     
-    @IBAction func tappedClearShapes(sender: UIBarButtonItem) {
+    @IBAction func tappedClearShapes(_ sender: UIBarButtonItem) {
         clearDelegate?.didClearParticles()
     }
-    @IBAction func tappedClearObstacles(sender: UIBarButtonItem) {
+    @IBAction func tappedClearObstacles(_ sender: UIBarButtonItem) {
         clearDelegate?.didClearObstacles()
     }
     
-    @IBAction func rotated(sender: UIRotationGestureRecognizer) {
+    @IBAction func rotated(_ sender: UIRotationGestureRecognizer) {
         
-        if (sender.state == UIGestureRecognizerState.Ended) {
+        if (sender.state == UIGestureRecognizerState.ended) {
             lastRotation = 0.0;
             return
         }
         
         let rotation = 0.0 - (sender.rotation - lastRotation)
-        let trans = CGAffineTransformMakeRotation(rotation)
+        let trans = CGAffineTransform(rotationAngle: rotation)
         
         if let skScene = skView.scene {
-            let newGravity = CGPointApplyAffineTransform(CGPointMake(skScene.physicsWorld.gravity.dy, skScene.physicsWorld.gravity.dx), trans)
-            skScene.physicsWorld.gravity = CGVectorMake(newGravity.x, newGravity.y)
+            let newGravity = CGPoint(x: skScene.physicsWorld.gravity.dy, y: skScene.physicsWorld.gravity.dx).applying(trans)
+            skScene.physicsWorld.gravity = CGVector(dx: newGravity.x, dy: newGravity.y)
         }
         
         lastRotation = sender.rotation
@@ -74,10 +74,10 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
         
         clearDelegate = self
         statusHidden = false
-        navigationController?.navigationBarHidden = true
+        navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         skView.showsFPS = false
@@ -85,17 +85,17 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
         skView.ignoresSiblingOrder = true
         
         let scene = MillScene(size: skView.frame.size)
-        scene.scaleMode = .AspectFit
+        scene.scaleMode = .aspectFit
         scene.particleImage = UIImage(named: "circle-sm")
         skView.presentScene(scene)
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let vc = segue.destinationViewController as? ShapeTypesViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ShapeTypesViewController {
             vc.delegate = self
         }
     }

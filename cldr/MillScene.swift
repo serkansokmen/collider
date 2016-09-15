@@ -13,15 +13,15 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
     var activeSliceBG: SKShapeNode!
     var activeSliceFG: SKShapeNode!
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         
         view.ignoresSiblingOrder = false
-        scene?.backgroundColor = UIColor.blackColor()
+        scene?.backgroundColor = UIColor.black
         
         motionManager = CMMotionManager()
         motionManager.startAccelerometerUpdates()
         
-        physicsBody = SKPhysicsBody(edgeLoopFromRect: frame)
+        physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
@@ -32,12 +32,12 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         addChild(obstacles)
     }
     
-    override func willMoveFromView(view: SKView) {
+    override func willMove(from view: SKView) {
         motionManager.stopAccelerometerUpdates()
-        super.willMoveFromView(view)
+        super.willMove(from: view)
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         
         super.update(currentTime)
         
@@ -47,14 +47,14 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        super.touchesBegan(touches, withEvent: event)
+        super.touchesBegan(touches, with: event)
         
-        activeSlicePoints.removeAll(keepCapacity: true)
+        activeSlicePoints.removeAll(keepingCapacity: true)
         
         if let touch = touches.first {
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
             activeSlicePoints.append(location)
             
             redrawActiveSlice()
@@ -67,17 +67,17 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
 //        guard let touch = touches.first else { return }
         
         for touch in touches {
             
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
             activeSlicePoints.append(location)
             
-            let loc = touch.locationInNode(self)
-            let prev = touch.previousLocationInNode(self)
+            let loc = touch.location(in: self)
+            let prev = touch.previousLocation(in: self)
             let dir = CGVector(dx: (loc.x - prev.x) * 7.5,
                                dy: (loc.y - prev.y) * 7.5)
             let body = MillThrowBody(withImage: particleImage)
@@ -93,12 +93,12 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         redrawActiveSlice()
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        activeSliceBG.runAction(SKAction.fadeOutWithDuration(0.25))
-        activeSliceFG.runAction(SKAction.fadeOutWithDuration(0.25))
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        activeSliceBG.run(SKAction.fadeOut(withDuration: 0.25))
+        activeSliceFG.run(SKAction.fadeOut(withDuration: 0.25))
     }
     
-    func didBeginContact(contact: SKPhysicsContact) {
+    func didBegin(_ contact: SKPhysicsContact) {
         if (contact.collisionImpulse > 0.1) {
             if let aNode = contact.bodyA.node as? MillThrowBody,
                 let bNode = contact.bodyB.node as? MillThrowBody {
@@ -142,7 +142,7 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         activeSliceBG.strokeColor = UIColor(red: 1, green: 0.9, blue: 0, alpha: 1)
         activeSliceBG.lineWidth = 3
         
-        activeSliceFG.strokeColor = UIColor.whiteColor()
+        activeSliceFG.strokeColor = UIColor.white
         activeSliceFG.lineWidth = 1
         
         addChild(activeSliceBG)
@@ -157,17 +157,17 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         }
         
         while activeSlicePoints.count > 12 {
-            activeSlicePoints.removeAtIndex(0)
+            activeSlicePoints.remove(at: 0)
         }
         
         let path = UIBezierPath()
-        path.moveToPoint(activeSlicePoints[0])
+        path.move(to: activeSlicePoints[0])
         for i in 1 ..< activeSlicePoints.count {
-            path.addLineToPoint(activeSlicePoints[i])
+            path.addLine(to: activeSlicePoints[i])
         }
         
-        activeSliceBG.path = path.CGPath
-        activeSliceFG.path = path.CGPath
+        activeSliceBG.path = path.cgPath
+        activeSliceFG.path = path.cgPath
     }
 
 }

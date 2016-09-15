@@ -11,7 +11,7 @@ class MillObstacle: SKSpriteNode {
         
         let texture = SKTexture(image: image)
         super.init(texture: texture,
-                   color: UIColor.whiteColor(),
+                   color: UIColor.white,
                    size: texture.size())
         self.name = name
         self.zPosition = 1
@@ -22,7 +22,7 @@ class MillObstacle: SKSpriteNode {
         physicsBody = SKPhysicsBody(texture: texture, size: self.size)
         if let physics = self.physicsBody {
             
-            physics.dynamic = true
+            physics.isDynamic = true
             physics.affectedByGravity = true
             physics.allowsRotation = true
             physics.pinned = true

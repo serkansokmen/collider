@@ -16,8 +16,8 @@ enum ObstacleType: String {
 }
 
 protocol ShapeTypeSelectionDelegate {
-    func didSelectThrowBodyWithImage(image: UIImage)
-    func didSelectObstacleWithImage(image: UIImage)
+    func didSelectThrowBodyWithImage(_ image: UIImage)
+    func didSelectObstacleWithImage(_ image: UIImage)
 }
 
 protocol ClearTypeDelegate {
@@ -34,14 +34,14 @@ class ShapeTypesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundView?.backgroundColor = UIColor.clearColor()
+        tableView.backgroundView?.backgroundColor = UIColor.clear
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
             return shapes.count
@@ -50,7 +50,7 @@ class ShapeTypesViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if section == 0 {
             return "Shape types"
@@ -60,28 +60,28 @@ class ShapeTypesViewController: UITableViewController {
         return nil
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("ShapeTypeCell", forIndexPath: indexPath) as! ShapeTypeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ShapeTypeCell", for: indexPath) as! ShapeTypeCell
         var shapeName: String!
-        if indexPath.section == 0 {
-            shapeName = shapes[indexPath.row].rawValue
-        } else if indexPath.section == 1 {
-            shapeName = obstacles[indexPath.row].rawValue
+        if (indexPath as NSIndexPath).section == 0 {
+            shapeName = shapes[(indexPath as NSIndexPath).row].rawValue
+        } else if (indexPath as NSIndexPath).section == 1 {
+            shapeName = obstacles[(indexPath as NSIndexPath).row].rawValue
         }
         
         cell.imgView.image = UIImage(named: shapeName)!
-        cell.shapeTypeLabel.text = shapeName.uppercaseString
+        cell.shapeTypeLabel.text = shapeName.uppercased()
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.section == 0 {
-            delegate?.didSelectThrowBodyWithImage(UIImage(named: shapes[indexPath.row].rawValue)!)
-        } else if indexPath.section == 1 {
-            delegate?.didSelectObstacleWithImage(UIImage(named: obstacles[indexPath.row].rawValue)!)
+        if (indexPath as NSIndexPath).section == 0 {
+            delegate?.didSelectThrowBodyWithImage(UIImage(named: shapes[(indexPath as NSIndexPath).row].rawValue)!)
+        } else if (indexPath as NSIndexPath).section == 1 {
+            delegate?.didSelectObstacleWithImage(UIImage(named: obstacles[(indexPath as NSIndexPath).row].rawValue)!)
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
