@@ -8,52 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		16EBC33A3937297A6FC5723C /* Pods_cldr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD991F6B2764C97A2857223B /* Pods_cldr.framework */; };
-		BC29BFEACA3647E3A89BD51E /* Pods_Collider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA3EA7E0A45FA8EC358374B /* Pods_Collider.framework */; };
-		E60EE4F91CD1999D00CB0DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4ED1CD1999D00CB0DBA /* AppDelegate.swift */; };
-		E60EE4FA1CD1999D00CB0DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60EE4EE1CD1999D00CB0DBA /* Assets.xcassets */; };
-		E60EE4FB1CD1999D00CB0DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60EE4EF1CD1999D00CB0DBA /* LaunchScreen.storyboard */; };
-		E60EE4FC1CD1999D00CB0DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60EE4F11CD1999D00CB0DBA /* Main.storyboard */; };
-		E60EE4FE1CD1999D00CB0DBA /* MillScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4F41CD1999D00CB0DBA /* MillScene.swift */; };
-		E60EE4FF1CD1999D00CB0DBA /* MillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */; };
-		E60EE5001CD1999D00CB0DBA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60EE4F61CD1999D00CB0DBA /* Helper.swift */; };
-		E611EB821CE406A600A8C7C0 /* MillObstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611EB811CE406A600A8C7C0 /* MillObstacle.swift */; };
 		E611EB841CE4147E00A8C7C0 /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E611EB831CE4147E00A8C7C0 /* hit.wav */; };
-		E62F8AC01CE1657500FED31C /* Shader01.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E62F8ABF1CE1657500FED31C /* Shader01.fsh */; };
-		E6775EAF1D8219170088F143 /* ShapeTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6775EAE1D8219170088F143 /* ShapeTypesViewController.swift */; };
-		E6775EB21D82235C0088F143 /* ShapeTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6775EB11D82235C0088F143 /* ShapeTypeCell.swift */; };
-		E68EB4C11CDAC23F00601305 /* MillThrowBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68EB4C01CDAC23F00601305 /* MillThrowBody.swift */; };
-		E6D42E021CD822EA00AA9632 /* CircleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6D42E001CD822EA00AA9632 /* CircleParticle.sks */; };
-		E6D42E061CD8261A00AA9632 /* SpiralParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */; };
+		E6DFE1951D844C640085D30A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE1831D844C640085D30A /* AppDelegate.swift */; };
+		E6DFE1961D844C640085D30A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1841D844C640085D30A /* Assets.xcassets */; };
+		E6DFE1971D844C640085D30A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1851D844C640085D30A /* LaunchScreen.storyboard */; };
+		E6DFE1981D844C640085D30A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1871D844C640085D30A /* Main.storyboard */; };
+		E6DFE1991D844C640085D30A /* CircleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1891D844C640085D30A /* CircleParticle.sks */; };
+		E6DFE19A1D844C640085D30A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE18A1D844C640085D30A /* Helper.swift */; };
+		E6DFE19B1D844C640085D30A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE18B1D844C640085D30A /* Info.plist */; };
+		E6DFE19C1D844C640085D30A /* MillObstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE18C1D844C640085D30A /* MillObstacle.swift */; };
+		E6DFE19D1D844C640085D30A /* MillScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE18D1D844C640085D30A /* MillScene.swift */; };
+		E6DFE19E1D844C640085D30A /* MillThrowBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE18E1D844C640085D30A /* MillThrowBody.swift */; };
+		E6DFE19F1D844C640085D30A /* MillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE18F1D844C640085D30A /* MillViewController.swift */; };
+		E6DFE1A01D844C640085D30A /* Shader01.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1911D844C640085D30A /* Shader01.fsh */; };
+		E6DFE1A11D844C640085D30A /* ShapeTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE1921D844C640085D30A /* ShapeTypeCell.swift */; };
+		E6DFE1A21D844C640085D30A /* ShapeTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE1931D844C640085D30A /* ShapeTypesViewController.swift */; };
+		E6DFE1A31D844C640085D30A /* SpiralParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1941D844C640085D30A /* SpiralParticle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1DA3EA7E0A45FA8EC358374B /* Pods_Collider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Collider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3691DAB38EB14BC75AFEF460 /* Pods-cldr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cldr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cldr/Pods-cldr.debug.xcconfig"; sourceTree = "<group>"; };
 		47BD48B1A0E9C350D1319C35 /* Pods-cldr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cldr.release.xcconfig"; path = "Pods/Target Support Files/Pods-cldr/Pods-cldr.release.xcconfig"; sourceTree = "<group>"; };
-		4A9113610DA303B55C22611F /* Pods-Collider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Collider/Pods-Collider.debug.xcconfig"; sourceTree = "<group>"; };
-		9457D2729F2C0E5862EFBBD8 /* Pods-Collider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collider.release.xcconfig"; path = "Pods/Target Support Files/Pods-Collider/Pods-Collider.release.xcconfig"; sourceTree = "<group>"; };
 		CD991F6B2764C97A2857223B /* Pods_cldr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cldr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E60EE4ED1CD1999D00CB0DBA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E60EE4EE1CD1999D00CB0DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E60EE4F01CD1999D00CB0DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E60EE4F21CD1999D00CB0DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E60EE4F41CD1999D00CB0DBA /* MillScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillScene.swift; sourceTree = "<group>"; };
-		E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillViewController.swift; sourceTree = "<group>"; };
-		E60EE4F61CD1999D00CB0DBA /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		E60EE4F71CD1999D00CB0DBA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E611EB811CE406A600A8C7C0 /* MillObstacle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillObstacle.swift; sourceTree = "<group>"; };
 		E611EB831CE4147E00A8C7C0 /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hit.wav; path = assets/hit.wav; sourceTree = SOURCE_ROOT; };
-		E62F8ABF1CE1657500FED31C /* Shader01.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader01.fsh; sourceTree = "<group>"; };
 		E63F30291CCD683B0024ACE4 /* cldr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cldr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66164C11CE01339002B9D25 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwift/ReSwift.framework"; sourceTree = "<group>"; };
 		E66164C21CE01339002B9D25 /* ReSwiftRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRecorder.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwiftRecorder/ReSwiftRecorder.framework"; sourceTree = "<group>"; };
 		E66164C31CE01339002B9D25 /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwiftRouter/ReSwiftRouter.framework"; sourceTree = "<group>"; };
 		E66164C71CE01368002B9D25 /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/C4/C4.framework"; sourceTree = "<group>"; };
-		E6775EAE1D8219170088F143 /* ShapeTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeTypesViewController.swift; sourceTree = "<group>"; };
-		E6775EB11D82235C0088F143 /* ShapeTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeTypeCell.swift; sourceTree = "<group>"; };
-		E68EB4C01CDAC23F00601305 /* MillThrowBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillThrowBody.swift; sourceTree = "<group>"; };
-		E6D42E001CD822EA00AA9632 /* CircleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CircleParticle.sks; sourceTree = "<group>"; };
-		E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpiralParticle.sks; sourceTree = "<group>"; };
+		E6DFE1831D844C640085D30A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../cldr/AppDelegate.swift; sourceTree = "<group>"; };
+		E6DFE1841D844C640085D30A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../cldr/Assets.xcassets; sourceTree = "<group>"; };
+		E6DFE1861D844C640085D30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E6DFE1881D844C640085D30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E6DFE1891D844C640085D30A /* CircleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = CircleParticle.sks; path = ../cldr/CircleParticle.sks; sourceTree = "<group>"; };
+		E6DFE18A1D844C640085D30A /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = ../cldr/Helper.swift; sourceTree = "<group>"; };
+		E6DFE18B1D844C640085D30A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../cldr/Info.plist; sourceTree = "<group>"; };
+		E6DFE18C1D844C640085D30A /* MillObstacle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MillObstacle.swift; path = ../cldr/MillObstacle.swift; sourceTree = "<group>"; };
+		E6DFE18D1D844C640085D30A /* MillScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MillScene.swift; path = ../cldr/MillScene.swift; sourceTree = "<group>"; };
+		E6DFE18E1D844C640085D30A /* MillThrowBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MillThrowBody.swift; path = ../cldr/MillThrowBody.swift; sourceTree = "<group>"; };
+		E6DFE18F1D844C640085D30A /* MillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MillViewController.swift; path = ../cldr/MillViewController.swift; sourceTree = "<group>"; };
+		E6DFE1911D844C640085D30A /* Shader01.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader01.fsh; path = ../cldr/Shader01.fsh; sourceTree = "<group>"; };
+		E6DFE1921D844C640085D30A /* ShapeTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShapeTypeCell.swift; path = ../cldr/ShapeTypeCell.swift; sourceTree = "<group>"; };
+		E6DFE1931D844C640085D30A /* ShapeTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShapeTypesViewController.swift; path = ../cldr/ShapeTypesViewController.swift; sourceTree = "<group>"; };
+		E6DFE1941D844C640085D30A /* SpiralParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = SpiralParticle.sks; path = ../cldr/SpiralParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC29BFEACA3647E3A89BD51E /* Pods_Collider.framework in Frameworks */,
 				16EBC33A3937297A6FC5723C /* Pods_cldr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,32 +68,30 @@
 		64EF735F9B901362B92E15D4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4A9113610DA303B55C22611F /* Pods-Collider.debug.xcconfig */,
-				9457D2729F2C0E5862EFBBD8 /* Pods-Collider.release.xcconfig */,
 				3691DAB38EB14BC75AFEF460 /* Pods-cldr.debug.xcconfig */,
 				47BD48B1A0E9C350D1319C35 /* Pods-cldr.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E60EE4EC1CD1999D00CB0DBA /* Collider */ = {
+		E60EE4EC1CD1999D00CB0DBA /* cldr */ = {
 			isa = PBXGroup;
 			children = (
-				E60EE4ED1CD1999D00CB0DBA /* AppDelegate.swift */,
+				E6DFE1831D844C640085D30A /* AppDelegate.swift */,
 				E6BE3E201D7DE85D004640B1 /* ViewControllers */,
 				E6BE3E211D7DE86E004640B1 /* Nodes */,
 				E6BE3E1F1D7DE84C004640B1 /* Assets */,
-				E60EE4F61CD1999D00CB0DBA /* Helper.swift */,
-				E6D42E001CD822EA00AA9632 /* CircleParticle.sks */,
-				E6D42E041CD8261A00AA9632 /* SpiralParticle.sks */,
+				E6DFE18A1D844C640085D30A /* Helper.swift */,
+				E6DFE1891D844C640085D30A /* CircleParticle.sks */,
+				E6DFE1941D844C640085D30A /* SpiralParticle.sks */,
 			);
-			path = Collider;
+			path = cldr;
 			sourceTree = "<group>";
 		};
 		E63F30201CCD683B0024ACE4 = {
 			isa = PBXGroup;
 			children = (
-				E60EE4EC1CD1999D00CB0DBA /* Collider */,
+				E60EE4EC1CD1999D00CB0DBA /* cldr */,
 				E63F302A1CCD683B0024ACE4 /* Products */,
 				64EF735F9B901362B92E15D4 /* Pods */,
 				F89390F0520CF976A6FCC012 /* Frameworks */,
@@ -115,11 +109,11 @@
 		E6BE3E1F1D7DE84C004640B1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				E60EE4F11CD1999D00CB0DBA /* Main.storyboard */,
-				E60EE4EE1CD1999D00CB0DBA /* Assets.xcassets */,
-				E60EE4EF1CD1999D00CB0DBA /* LaunchScreen.storyboard */,
-				E60EE4F71CD1999D00CB0DBA /* Info.plist */,
-				E62F8ABF1CE1657500FED31C /* Shader01.fsh */,
+				E6DFE1871D844C640085D30A /* Main.storyboard */,
+				E6DFE1841D844C640085D30A /* Assets.xcassets */,
+				E6DFE1851D844C640085D30A /* LaunchScreen.storyboard */,
+				E6DFE18B1D844C640085D30A /* Info.plist */,
+				E6DFE1911D844C640085D30A /* Shader01.fsh */,
 				E611EB831CE4147E00A8C7C0 /* hit.wav */,
 			);
 			name = Assets;
@@ -128,10 +122,10 @@
 		E6BE3E201D7DE85D004640B1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E60EE4F41CD1999D00CB0DBA /* MillScene.swift */,
-				E60EE4F51CD1999D00CB0DBA /* MillViewController.swift */,
-				E6775EAE1D8219170088F143 /* ShapeTypesViewController.swift */,
-				E6775EB11D82235C0088F143 /* ShapeTypeCell.swift */,
+				E6DFE18F1D844C640085D30A /* MillViewController.swift */,
+				E6DFE18D1D844C640085D30A /* MillScene.swift */,
+				E6DFE1931D844C640085D30A /* ShapeTypesViewController.swift */,
+				E6DFE1921D844C640085D30A /* ShapeTypeCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -139,8 +133,8 @@
 		E6BE3E211D7DE86E004640B1 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				E68EB4C01CDAC23F00601305 /* MillThrowBody.swift */,
-				E611EB811CE406A600A8C7C0 /* MillObstacle.swift */,
+				E6DFE18C1D844C640085D30A /* MillObstacle.swift */,
+				E6DFE18E1D844C640085D30A /* MillThrowBody.swift */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -152,7 +146,6 @@
 				E66164C11CE01339002B9D25 /* ReSwift.framework */,
 				E66164C21CE01339002B9D25 /* ReSwiftRecorder.framework */,
 				E66164C31CE01339002B9D25 /* ReSwiftRouter.framework */,
-				1DA3EA7E0A45FA8EC358374B /* Pods_Collider.framework */,
 				CD991F6B2764C97A2857223B /* Pods_cldr.framework */,
 			);
 			name = Frameworks;
@@ -221,13 +214,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6DFE1971D844C640085D30A /* LaunchScreen.storyboard in Resources */,
+				E6DFE1A01D844C640085D30A /* Shader01.fsh in Resources */,
+				E6DFE1A31D844C640085D30A /* SpiralParticle.sks in Resources */,
+				E6DFE1981D844C640085D30A /* Main.storyboard in Resources */,
 				E611EB841CE4147E00A8C7C0 /* hit.wav in Resources */,
-				E6D42E021CD822EA00AA9632 /* CircleParticle.sks in Resources */,
-				E6D42E061CD8261A00AA9632 /* SpiralParticle.sks in Resources */,
-				E60EE4FB1CD1999D00CB0DBA /* LaunchScreen.storyboard in Resources */,
-				E60EE4FC1CD1999D00CB0DBA /* Main.storyboard in Resources */,
-				E62F8AC01CE1657500FED31C /* Shader01.fsh in Resources */,
-				E60EE4FA1CD1999D00CB0DBA /* Assets.xcassets in Resources */,
+				E6DFE1991D844C640085D30A /* CircleParticle.sks in Resources */,
+				E6DFE19B1D844C640085D30A /* Info.plist in Resources */,
+				E6DFE1961D844C640085D30A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,34 +280,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E60EE4FF1CD1999D00CB0DBA /* MillViewController.swift in Sources */,
-				E60EE4FE1CD1999D00CB0DBA /* MillScene.swift in Sources */,
-				E6775EAF1D8219170088F143 /* ShapeTypesViewController.swift in Sources */,
-				E611EB821CE406A600A8C7C0 /* MillObstacle.swift in Sources */,
-				E60EE4F91CD1999D00CB0DBA /* AppDelegate.swift in Sources */,
-				E60EE5001CD1999D00CB0DBA /* Helper.swift in Sources */,
-				E68EB4C11CDAC23F00601305 /* MillThrowBody.swift in Sources */,
-				E6775EB21D82235C0088F143 /* ShapeTypeCell.swift in Sources */,
+				E6DFE19F1D844C640085D30A /* MillViewController.swift in Sources */,
+				E6DFE1951D844C640085D30A /* AppDelegate.swift in Sources */,
+				E6DFE19E1D844C640085D30A /* MillThrowBody.swift in Sources */,
+				E6DFE19D1D844C640085D30A /* MillScene.swift in Sources */,
+				E6DFE19A1D844C640085D30A /* Helper.swift in Sources */,
+				E6DFE1A11D844C640085D30A /* ShapeTypeCell.swift in Sources */,
+				E6DFE19C1D844C640085D30A /* MillObstacle.swift in Sources */,
+				E6DFE1A21D844C640085D30A /* ShapeTypesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E60EE4EF1CD1999D00CB0DBA /* LaunchScreen.storyboard */ = {
+		E6DFE1851D844C640085D30A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E60EE4F01CD1999D00CB0DBA /* Base */,
+				E6DFE1861D844C640085D30A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../cldr;
 			sourceTree = "<group>";
 		};
-		E60EE4F11CD1999D00CB0DBA /* Main.storyboard */ = {
+		E6DFE1871D844C640085D30A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E60EE4F21CD1999D00CB0DBA /* Base */,
+				E6DFE1881D844C640085D30A /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../cldr;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -411,9 +407,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YGQRYMCYG9;
-				INFOPLIST_FILE = Collider/Info.plist;
+				INFOPLIST_FILE = cldr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.ofoto.ios.Collider;
+				PRODUCT_BUNDLE_IDENTIFIER = io.ofoto.ios.cldr;
 				PRODUCT_NAME = cldr;
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -428,7 +424,7 @@
 				DEVELOPMENT_TEAM = YGQRYMCYG9;
 				INFOPLIST_FILE = Collider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.ofoto.ios.Collider;
+				PRODUCT_BUNDLE_IDENTIFIER = io.ofoto.ios.cldr;
 				PRODUCT_NAME = cldr;
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";

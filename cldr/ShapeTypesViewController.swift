@@ -12,6 +12,7 @@ enum ShapeType: String {
 enum ObstacleType: String {
     case Spiral = "spiral";
     case Mill = "mill";
+    case Infinity = "infinity"
 }
 
 protocol ShapeTypeSelectionDelegate {
@@ -27,13 +28,13 @@ protocol ClearTypeDelegate {
 class ShapeTypesViewController: UITableViewController {
     
     let shapes: [ShapeType] = [.Triangle, .Pentagon, .Square, .Circle, .Cross, .Rounded]
-    let obstacles: [ObstacleType] = [.Spiral, .Mill]
+    let obstacles: [ObstacleType] = [.Spiral, .Mill, .Infinity]
     
     var delegate: ShapeTypeSelectionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(shapes)
+        tableView.backgroundView?.backgroundColor = UIColor.clearColor()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

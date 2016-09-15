@@ -1,11 +1,8 @@
-# define a global platform
-platform :ios, "9.0"
-source "https://github.com/CocoaPods/Specs.git"
-# using Swift
-use_frameworks!
+platform :ios, '9.0'
 
-target "cldr" do
-    pod "AudioKit"
-#    pod "C4"
-    pod "ChameleonFramework"
+target 'cldr' do
+    use_frameworks!
+#    pod 'AudioKit', :git=> 'git@github.com:audiokit/AudioKit.git', :branch => 'Xcode8-Swift2.3'
+#    pod 'C4'
+    pod 'ChameleonFramework'
 end

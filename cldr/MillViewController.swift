@@ -5,6 +5,11 @@ import SpriteKit
 class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTypeDelegate {
     
     var clearDelegate: ClearTypeDelegate?
+    var statusHidden = false {
+        didSet {
+            navigationController?.toolbarHidden = statusHidden
+        }
+    }
     var lastRotation = CGFloat(0.0)
     
     @IBOutlet weak var skView: SKView!
@@ -68,6 +73,8 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
         super.viewDidLoad()
         
         clearDelegate = self
+        statusHidden = false
+        navigationController?.navigationBarHidden = true
     }
     
     override func viewDidAppear(animated: Bool) {

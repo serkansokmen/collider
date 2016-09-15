@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,6 +20,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQN-on-r5P" customClass="SKView">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,28 +35,28 @@
                             <outletCollection property="gestureRecognizers" destination="bkN-tO-xig" appends="YES" id="UfD-N8-JSd"/>
                         </connections>
                     </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="b96-xX-52P">
-                        <rightBarButtonItems>
-                            <barButtonItem image="circle-sm" id="ciw-x6-Mt2">
-                                <connections>
-                                    <segue destination="Q3c-lI-nfL" kind="popoverPresentation" popoverAnchorBarButtonItem="ciw-x6-Mt2" id="VnC-nj-2rg">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="clear-sm" id="LMf-Cd-itc">
-                                <connections>
-                                    <action selector="tappedClearShapes:" destination="BV1-FR-VrT" id="qFA-sY-YLW"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="clear-sm" id="Rze-1Y-VIg">
-                                <connections>
-                                    <action selector="tappedClearObstacles:" destination="BV1-FR-VrT" id="vhC-ln-ZmJ"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <toolbarItems>
+                        <barButtonItem image="circle-sm" id="ciw-x6-Mt2">
+                            <connections>
+                                <segue destination="Q3c-lI-nfL" kind="popoverPresentation" popoverAnchorBarButtonItem="ciw-x6-Mt2" id="VnC-nj-2rg">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="clear-sm" id="LMf-Cd-itc">
+                            <connections>
+                                <action selector="tappedClearShapes:" destination="BV1-FR-VrT" id="qFA-sY-YLW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="clear-sm" id="Rze-1Y-VIg">
+                            <connections>
+                                <action selector="tappedClearObstacles:" destination="BV1-FR-VrT" id="vhC-ln-ZmJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="b96-xX-52P"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="skView" destination="rQN-on-r5P" id="Sjk-7C-fYj"/>
                     </connections>
@@ -74,7 +74,7 @@
         <scene sceneID="VXL-DE-JA0">
             <objects>
                 <tableViewController id="Q3c-lI-nfL" customClass="ShapeTypesViewController" customModule="cldr" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="ljv-I9-7ub">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="ljv-I9-7ub">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -83,7 +83,7 @@
                                 <rect key="frame" x="0.0" y="56" width="1024" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UsA-wN-MvN" id="bYW-l9-Kli">
-                                    <frame key="frameInset" width="1024" height="59"/>
+                                    <frame key="frameInset" width="1024" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ba-zZ-GHg">

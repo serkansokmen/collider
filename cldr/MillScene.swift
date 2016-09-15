@@ -51,8 +51,6 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         
         super.touchesBegan(touches, withEvent: event)
         
-        particles.runAction(SKAction.fadeAlphaTo(0.4, duration: 0.25))
-        
         activeSlicePoints.removeAll(keepCapacity: true)
         
         if let touch = touches.first {
@@ -96,7 +94,6 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        particles.runAction(SKAction.fadeAlphaTo(1.0, duration: 0.25))
         activeSliceBG.runAction(SKAction.fadeOutWithDuration(0.25))
         activeSliceFG.runAction(SKAction.fadeOutWithDuration(0.25))
     }
@@ -105,17 +102,16 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
         if (contact.collisionImpulse > 0.1) {
             if let aNode = contact.bodyA.node as? MillThrowBody,
                 let bNode = contact.bodyB.node as? MillThrowBody {
-                print("contact")
+                playCollisionSound()
             }
         }
     }
     
-//    func playLaunchSound() {
+    func playCollisionSound() {
 //        let interval: Double = 1
 //        let numberOfNotes: Double = 1
 //        let startingNote: Double = 96 // C
 //        let frequency = (floor(AKOperation.phasor(frequency: 0.5) * numberOfNotes) * interval  + startingNote).midiNoteToFrequency()
-//        
 //        let amplitude = (AKOperation.phasor(frequency: 0.5) - 1).portamento() // prevents the click sound
 //        
 //        let oscillator = AKOperation.morphingOscillator(frequency: frequency, amplitude: amplitude)
@@ -124,14 +120,14 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
 //        let generator = AKOperationGenerator(operation: oscillatorReverbMix)
 //        
 //        AudioKit.output = generator
-//        AudioKit.start()
 //        generator.start()
-//    }
+//        AudioKit.start()
+    }
     
     func addObstacle(withImage image: UIImage, atPosition position: CGPoint) {
         let mill = MillObstacle(withImage: image)
         mill.position = position
-        mill.setScale(RandomCGFloat(min: 0.2, max: 0.6))
+        mill.setScale(RandomCGFloat(min: 0.5, max: 0.8))
         mill.setupPhysics(fromImage: image)
         obstacles.addChild(mill)
     }

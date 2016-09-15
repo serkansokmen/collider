@@ -1,17 +1,14 @@
 PODS:
-  - AudioKit (3.3)
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
 
 DEPENDENCIES:
-  - AudioKit
   - ChameleonFramework
 
 SPEC CHECKSUMS:
-  AudioKit: 6d937af5a8f9164e9f31c1f05acdba1b7b0c9fd8
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
 
-PODFILE CHECKSUM: a5e1454be170df51559f761cab5d6ff4f2d123dd
+PODFILE CHECKSUM: bcb11947fd9a1c140f2bf51e36a9fde78075f5c7
 
 COCOAPODS: 1.1.0.beta.2

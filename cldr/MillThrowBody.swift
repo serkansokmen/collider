@@ -1,7 +1,10 @@
 import SpriteKit
+import GameKit
+//import AudioKit
 
-
-class MillObstacle: SKSpriteNode {
+class MillThrowBody: SKSpriteNode {
+    
+//    let collisionSound = AKDrip(intensity: 1)
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -13,28 +16,32 @@ class MillObstacle: SKSpriteNode {
         super.init(texture: texture,
                    color: UIColor.whiteColor(),
                    size: texture.size())
+        
         self.name = name
         self.zPosition = 1
-    }
-    
-    func setupPhysics(fromImage image: UIImage) {
-        let texture = SKTexture(image: image)
-        physicsBody = SKPhysicsBody(texture: texture, size: self.size)
+        let rand = RandomCGFloat(min: 0.05, max: 0.25)
+        self.xScale = rand
+        self.yScale = rand
+        
+        self.physicsBody = SKPhysicsBody(texture: texture, size: self.size)
+        
         if let physics = self.physicsBody {
             
             physics.dynamic = true
             physics.affectedByGravity = true
             physics.allowsRotation = true
-            physics.pinned = true
-            physics.density = 0.75
+            
+            physics.density = min(xScale, yScale)
             physics.friction = 0.85
             physics.restitution = 0.25
             
-            physics.angularVelocity = 0.15
-            physics.angularDamping = 0.95
-            physics.linearDamping = 0.75
+            physics.angularVelocity = 0.75
+            physics.angularDamping = 0.01
+            physics.linearDamping = 0.01
             
             physics.contactTestBitMask = physics.collisionBitMask
+            
+            physics.usesPreciseCollisionDetection = true
         }
     }
     

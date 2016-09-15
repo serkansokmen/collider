@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.idleTimerDisabled = true
         
         // Set theme
-        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatRedColorDark(),
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatNavyBlueColorDark(),
                                                   withContentStyle: .Light)
         
         return true
