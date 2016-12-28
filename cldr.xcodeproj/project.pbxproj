@@ -15,12 +15,10 @@
 		E6DFE1981D844C640085D30A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1871D844C640085D30A /* Main.storyboard */; };
 		E6DFE1991D844C640085D30A /* CircleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1891D844C640085D30A /* CircleParticle.sks */; };
 		E6DFE19A1D844C640085D30A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE18A1D844C640085D30A /* Helper.swift */; };
-		E6DFE19B1D844C640085D30A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE18B1D844C640085D30A /* Info.plist */; };
 		E6DFE19C1D844C640085D30A /* MillObstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE18C1D844C640085D30A /* MillObstacle.swift */; };
 		E6DFE19D1D844C640085D30A /* MillScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE18D1D844C640085D30A /* MillScene.swift */; };
 		E6DFE19E1D844C640085D30A /* MillThrowBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE18E1D844C640085D30A /* MillThrowBody.swift */; };
 		E6DFE19F1D844C640085D30A /* MillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE18F1D844C640085D30A /* MillViewController.swift */; };
-		E6DFE1A01D844C640085D30A /* Shader01.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1911D844C640085D30A /* Shader01.fsh */; };
 		E6DFE1A11D844C640085D30A /* ShapeTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE1921D844C640085D30A /* ShapeTypeCell.swift */; };
 		E6DFE1A21D844C640085D30A /* ShapeTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE1931D844C640085D30A /* ShapeTypesViewController.swift */; };
 		E6DFE1A31D844C640085D30A /* SpiralParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1941D844C640085D30A /* SpiralParticle.sks */; };
@@ -36,6 +34,7 @@
 		E66164C21CE01339002B9D25 /* ReSwiftRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRecorder.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwiftRecorder/ReSwiftRecorder.framework"; sourceTree = "<group>"; };
 		E66164C31CE01339002B9D25 /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/ReSwiftRouter/ReSwiftRouter.framework"; sourceTree = "<group>"; };
 		E66164C71CE01368002B9D25 /* C4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = C4.framework; path = "../../../Library/Developer/Xcode/DerivedData/Collider-bwbcbhokjpjbtmhatqxxplumqaau/Build/Products/Debug-iphonesimulator/C4/C4.framework"; sourceTree = "<group>"; };
+		E6D7AF831D8C871300E48FC9 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		E6DFE1831D844C640085D30A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../cldr/AppDelegate.swift; sourceTree = "<group>"; };
 		E6DFE1841D844C640085D30A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../cldr/Assets.xcassets; sourceTree = "<group>"; };
 		E6DFE1861D844C640085D30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,7 +46,6 @@
 		E6DFE18D1D844C640085D30A /* MillScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MillScene.swift; path = ../cldr/MillScene.swift; sourceTree = "<group>"; };
 		E6DFE18E1D844C640085D30A /* MillThrowBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MillThrowBody.swift; path = ../cldr/MillThrowBody.swift; sourceTree = "<group>"; };
 		E6DFE18F1D844C640085D30A /* MillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MillViewController.swift; path = ../cldr/MillViewController.swift; sourceTree = "<group>"; };
-		E6DFE1911D844C640085D30A /* Shader01.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader01.fsh; path = ../cldr/Shader01.fsh; sourceTree = "<group>"; };
 		E6DFE1921D844C640085D30A /* ShapeTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShapeTypeCell.swift; path = ../cldr/ShapeTypeCell.swift; sourceTree = "<group>"; };
 		E6DFE1931D844C640085D30A /* ShapeTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShapeTypesViewController.swift; path = ../cldr/ShapeTypesViewController.swift; sourceTree = "<group>"; };
 		E6DFE1941D844C640085D30A /* SpiralParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = SpiralParticle.sks; path = ../cldr/SpiralParticle.sks; sourceTree = "<group>"; };
@@ -84,6 +82,7 @@
 				E6DFE18A1D844C640085D30A /* Helper.swift */,
 				E6DFE1891D844C640085D30A /* CircleParticle.sks */,
 				E6DFE1941D844C640085D30A /* SpiralParticle.sks */,
+				E6D7AF831D8C871300E48FC9 /* MyPlayground.playground */,
 			);
 			path = cldr;
 			sourceTree = "<group>";
@@ -113,7 +112,6 @@
 				E6DFE1841D844C640085D30A /* Assets.xcassets */,
 				E6DFE1851D844C640085D30A /* LaunchScreen.storyboard */,
 				E6DFE18B1D844C640085D30A /* Info.plist */,
-				E6DFE1911D844C640085D30A /* Shader01.fsh */,
 				E611EB831CE4147E00A8C7C0 /* hit.wav */,
 			);
 			name = Assets;
@@ -181,7 +179,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Serkan Sokmen";
 				TargetAttributes = {
 					E63F30281CCD683B0024ACE4 = {
@@ -215,12 +213,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6DFE1971D844C640085D30A /* LaunchScreen.storyboard in Resources */,
-				E6DFE1A01D844C640085D30A /* Shader01.fsh in Resources */,
 				E6DFE1A31D844C640085D30A /* SpiralParticle.sks in Resources */,
 				E6DFE1981D844C640085D30A /* Main.storyboard in Resources */,
 				E611EB841CE4147E00A8C7C0 /* hit.wav in Resources */,
 				E6DFE1991D844C640085D30A /* CircleParticle.sks in Resources */,
-				E6DFE19B1D844C640085D30A /* Info.plist in Resources */,
 				E6DFE1961D844C640085D30A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,8 +325,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -376,8 +374,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -396,6 +396,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

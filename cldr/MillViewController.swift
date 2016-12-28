@@ -1,16 +1,20 @@
 import UIKit
 import SpriteKit
 
+struct MillViewModel {
+    var lastRotation: CGFloat
+}
 
 class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTypeDelegate {
     
+    var viewModel: MillViewModel!
     var clearDelegate: ClearTypeDelegate?
+    
     var statusHidden = false {
         didSet {
             navigationController?.isToolbarHidden = statusHidden
         }
     }
-    var lastRotation = CGFloat(0.0)
     
     @IBOutlet weak var skView: SKView!
     
@@ -20,6 +24,7 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
             millScene.particleImage = image
         }
     }
+    
     func didSelectObstacleWithImage(_ image: UIImage) {
         if let millScene = self.skView.scene as? MillScene {
             millScene.addObstacle(withImage: image,
@@ -53,11 +58,11 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
     @IBAction func rotated(_ sender: UIRotationGestureRecognizer) {
         
         if (sender.state == UIGestureRecognizerState.ended) {
-            lastRotation = 0.0;
+            viewModel.lastRotation = 0.0;
             return
         }
         
-        let rotation = 0.0 - (sender.rotation - lastRotation)
+        let rotation = 0.0 - (sender.rotation - viewModel.lastRotation)
         let trans = CGAffineTransform(rotationAngle: rotation)
         
         if let skScene = skView.scene {
@@ -65,13 +70,14 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
             skScene.physicsWorld.gravity = CGVector(dx: newGravity.x, dy: newGravity.y)
         }
         
-        lastRotation = sender.rotation
+        viewModel.lastRotation = sender.rotation
     }
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel = MillViewModel(lastRotation: CGFloat(0.0))
         clearDelegate = self
         statusHidden = false
         navigationController?.isNavigationBarHidden = true

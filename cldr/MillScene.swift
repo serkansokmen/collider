@@ -6,7 +6,7 @@ import CoreMotion
 class MillScene: SKScene, SKPhysicsContactDelegate {
     
     var motionManager: CMMotionManager!
-    var particleImage: UIImage! = nil
+    var particleImage: UIImage!
     let particles = SKNode()
     let obstacles = SKNode()
     var activeSlicePoints = [CGPoint]()
@@ -16,7 +16,7 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         
         view.ignoresSiblingOrder = false
-        scene?.backgroundColor = UIColor.black
+        scene?.backgroundColor = UIColor.flatGrayColorDark()
         
         motionManager = CMMotionManager()
         motionManager.startAccelerometerUpdates()
@@ -69,7 +69,7 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-//        guard let touch = touches.first else { return }
+        guard let particleImage = particleImage else { return }
         
         for touch in touches {
             
@@ -100,8 +100,9 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         if (contact.collisionImpulse > 0.1) {
-            if let aNode = contact.bodyA.node as? MillThrowBody,
-                let bNode = contact.bodyB.node as? MillThrowBody {
+            
+            if let _ = contact.bodyA.node as? MillThrowBody,
+                let _ = contact.bodyB.node as? MillThrowBody {
                 playCollisionSound()
             }
         }
@@ -127,7 +128,7 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
     func addObstacle(withImage image: UIImage, atPosition position: CGPoint) {
         let mill = MillObstacle(withImage: image)
         mill.position = position
-        mill.setScale(RandomCGFloat(min: 0.5, max: 0.8))
+        mill.setScale(RandomCGFloat(0.5, max: 0.8))
         mill.setupPhysics(fromImage: image)
         obstacles.addChild(mill)
     }
