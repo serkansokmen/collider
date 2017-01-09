@@ -10,16 +10,14 @@ class MillThrowBody: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(withImage image: UIImage) {
+    init(withImage image: UIImage, andColor color: UIColor) {
         
         let texture = SKTexture(image: image)
-        super.init(texture: texture,
-                   color: UIColor.white,
-                   size: texture.size())
+        super.init(texture: texture, color: color, size: texture.size())
         
         self.name = name
         self.zPosition = 1
-        let rand = RandomCGFloat(0.05, max: 0.25)
+        let rand = RandomCGFloat(0.65, max: 0.25)
         self.xScale = rand
         self.yScale = rand
         
@@ -43,6 +41,8 @@ class MillThrowBody: SKSpriteNode {
             
             physics.usesPreciseCollisionDetection = true
         }
+        
+        self.run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0.1))
     }
     
 }

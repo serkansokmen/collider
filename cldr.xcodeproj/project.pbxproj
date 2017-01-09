@@ -11,7 +11,6 @@
 		E611EB841CE4147E00A8C7C0 /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E611EB831CE4147E00A8C7C0 /* hit.wav */; };
 		E6DFE1951D844C640085D30A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE1831D844C640085D30A /* AppDelegate.swift */; };
 		E6DFE1961D844C640085D30A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1841D844C640085D30A /* Assets.xcassets */; };
-		E6DFE1971D844C640085D30A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1851D844C640085D30A /* LaunchScreen.storyboard */; };
 		E6DFE1981D844C640085D30A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1871D844C640085D30A /* Main.storyboard */; };
 		E6DFE1991D844C640085D30A /* CircleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E6DFE1891D844C640085D30A /* CircleParticle.sks */; };
 		E6DFE19A1D844C640085D30A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFE18A1D844C640085D30A /* Helper.swift */; };
@@ -37,7 +36,6 @@
 		E6D7AF831D8C871300E48FC9 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		E6DFE1831D844C640085D30A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../cldr/AppDelegate.swift; sourceTree = "<group>"; };
 		E6DFE1841D844C640085D30A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../cldr/Assets.xcassets; sourceTree = "<group>"; };
-		E6DFE1861D844C640085D30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6DFE1881D844C640085D30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6DFE1891D844C640085D30A /* CircleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = CircleParticle.sks; path = ../cldr/CircleParticle.sks; sourceTree = "<group>"; };
 		E6DFE18A1D844C640085D30A /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = ../cldr/Helper.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 			children = (
 				E6DFE1871D844C640085D30A /* Main.storyboard */,
 				E6DFE1841D844C640085D30A /* Assets.xcassets */,
-				E6DFE1851D844C640085D30A /* LaunchScreen.storyboard */,
 				E6DFE18B1D844C640085D30A /* Info.plist */,
 				E611EB831CE4147E00A8C7C0 /* hit.wav */,
 			);
@@ -212,7 +209,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6DFE1971D844C640085D30A /* LaunchScreen.storyboard in Resources */,
 				E6DFE1A31D844C640085D30A /* SpiralParticle.sks in Resources */,
 				E6DFE1981D844C640085D30A /* Main.storyboard in Resources */,
 				E611EB841CE4147E00A8C7C0 /* hit.wav in Resources */,
@@ -290,15 +286,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E6DFE1851D844C640085D30A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6DFE1861D844C640085D30A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = ../cldr;
-			sourceTree = "<group>";
-		};
 		E6DFE1871D844C640085D30A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

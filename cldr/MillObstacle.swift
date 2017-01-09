@@ -7,14 +7,14 @@ class MillObstacle: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(withImage image: UIImage) {
+    init(withImage image: UIImage, andColor color: UIColor) {
         
         let texture = SKTexture(image: image)
-        super.init(texture: texture,
-                   color: UIColor.white,
-                   size: texture.size())
+        super.init(texture: texture, color: color, size: texture.size())
         self.name = name
         self.zPosition = 1
+        
+        self.run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0.1))
     }
     
     func setupPhysics(fromImage image: UIImage) {

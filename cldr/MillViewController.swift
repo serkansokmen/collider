@@ -1,14 +1,89 @@
 import UIKit
 import SpriteKit
+import Hero
+import ChameleonFramework
+
+enum ShapeType: String {
+    case triangle = "triangle"
+    case pentagon = "pentagon"
+    case square = "square"
+    case circle = "circle"
+    case cross = "cross"
+    case rounded = "rounded"
+    
+    var thumbnail: UIImage {
+        return UIImage(named: "\(self.rawValue)-sm")!
+    }
+    var image: UIImage {
+        return UIImage(named: "\(self.rawValue)")!
+    }
+    
+    static var shapes: [ShapeType] {
+        return [.triangle, .pentagon, .square, .circle, .cross, .rounded]
+    }
+    static var obstacles: [ObstacleType] {
+        return [.spiral, .mill, .infinity]
+    }
+}
+
+enum ObstacleType: String {
+    case spiral = "spiral"
+    case mill = "mill"
+    case infinity = "infinity"
+    
+    var image: UIImage {
+        return UIImage(named: "\(self.rawValue)")!
+    }
+}
+
+protocol ShapeManagerDelegate {
+    func didAddShape(atPosition point: CGPoint, andVelocity velocity: CGVector?)
+    func didClearObstacles()
+    func didClearParticles()
+    func didSelectThrowBody(_ type: ShapeType)
+    func didSelectObstacle(_ type: ObstacleType)
+}
+
+class ShapeManager {
+    
+    var observer: ShapeManagerDelegate?
+    
+//    private var queue = [ShapeType]()
+//    
+//    func append(type: ShapeType) {
+//        
+//        self.queue.append(type)
+//        
+//        self.observer?.didAdd(type)
+//    }
+    
+    func setup() {
+        
+    }
+}
+
 
 struct MillViewModel {
     var lastRotation: CGFloat
+    var particleImage: UIImage?
 }
 
-class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTypeDelegate {
+class MillViewController: UIViewController {
+    
+    @IBOutlet weak var skView: SKView!
+    @IBOutlet weak var shapeTypeBarButtonItem: UIBarButtonItem!
+    
+    //MARK: - IBActions
+    
+    @IBAction func tappedClearShapes(_ sender: UIBarButtonItem) {
+        shapeManager?.observer?.didClearParticles()
+    }
+    @IBAction func tappedClearObstacles(_ sender: UIBarButtonItem) {
+        shapeManager?.observer?.didClearObstacles()
+    }
     
     var viewModel: MillViewModel!
-    var clearDelegate: ClearTypeDelegate?
+    var shapeManager: ShapeManager?
     
     var statusHidden = false {
         didSet {
@@ -16,75 +91,18 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
         }
     }
     
-    @IBOutlet weak var skView: SKView!
-    
-    //MARK: - Settings Popup Delegate
-    func didSelectThrowBodyWithImage(_ image: UIImage) {
-        if let millScene = self.skView.scene as? MillScene {
-            millScene.particleImage = image
-        }
-    }
-    
-    func didSelectObstacleWithImage(_ image: UIImage) {
-        if let millScene = self.skView.scene as? MillScene {
-            millScene.addObstacle(withImage: image,
-                                  atPosition: CGPoint(x: view.frame.width/2, y: view.frame.height/2))
-        }
-    }
-    
-    func didClearObstacles() {
-        if let millScene = self.skView.scene as? MillScene {
-            millScene.obstacles.removeAllActions()
-            millScene.obstacles.removeAllChildren()
-        }
-    }
-    
-    func didClearParticles() {
-        if let millScene = self.skView.scene as? MillScene {
-            millScene.particles.removeAllActions()
-            millScene.particles.removeAllChildren()
-        }
-    }
-    
-    //MARK: - IBActions
-    
-    @IBAction func tappedClearShapes(_ sender: UIBarButtonItem) {
-        clearDelegate?.didClearParticles()
-    }
-    @IBAction func tappedClearObstacles(_ sender: UIBarButtonItem) {
-        clearDelegate?.didClearObstacles()
-    }
-    
-    @IBAction func rotated(_ sender: UIRotationGestureRecognizer) {
-        
-        if (sender.state == UIGestureRecognizerState.ended) {
-            viewModel.lastRotation = 0.0;
-            return
-        }
-        
-        let rotation = 0.0 - (sender.rotation - viewModel.lastRotation)
-        let trans = CGAffineTransform(rotationAngle: rotation)
-        
-        if let skScene = skView.scene {
-            let newGravity = CGPoint(x: skScene.physicsWorld.gravity.dy, y: skScene.physicsWorld.gravity.dx).applying(trans)
-            skScene.physicsWorld.gravity = CGVector(dx: newGravity.x, dy: newGravity.y)
-        }
-        
-        viewModel.lastRotation = sender.rotation
-    }
-    
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = MillViewModel(lastRotation: CGFloat(0.0))
-        clearDelegate = self
+        viewModel = MillViewModel(lastRotation: CGFloat(0.0), particleImage: UIImage(named: "circle-sm"))
         statusHidden = false
         navigationController?.isNavigationBarHidden = true
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        navigationController?.isHeroEnabled = true
+        
+        shapeManager = ShapeManager()
+        shapeManager?.observer = self
+        shapeManager?.setup()
         
         skView.showsFPS = false
         skView.showsNodeCount = false
@@ -92,8 +110,9 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
         
         let scene = MillScene(size: skView.frame.size)
         scene.scaleMode = .aspectFit
-        scene.particleImage = UIImage(named: "circle-sm")
         skView.presentScene(scene)
+        
+        scene.shapeManagerDelegate = self
     }
     
     override var prefersStatusBarHidden : Bool {
@@ -102,8 +121,81 @@ class MillViewController: UIViewController, ShapeTypeSelectionDelegate, ClearTyp
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ShapeTypesViewController {
-            vc.delegate = self
+            vc.delegate = shapeManager?.observer
         }
     }
     
+}
+
+//MARK: - Shape Type Controller Delegate
+extension MillViewController: ShapeManagerDelegate {
+    
+    func didAddShape(atPosition point: CGPoint, andVelocity velocity: CGVector?) {
+        
+        guard let millScene = self.skView.scene as? MillScene else { return }
+        guard let image = self.viewModel.particleImage else { return }
+        
+        let body = MillThrowBody.init(withImage: image, andColor: UIColor.flatBrown)
+        body.position = point
+        body.physicsBody?.velocity = velocity ?? CGVector.zero
+        millScene.particles.addChild(body)
+        
+        if millScene.particles.children.count > 100 {
+            millScene.particles.children[0].removeFromParent()
+        }
+    }
+    func didSelectThrowBody(_ type: ShapeType) {
+        self.viewModel.particleImage = type.image
+        shapeTypeBarButtonItem.image = type.thumbnail
+    }
+    
+    func didSelectObstacle(_ type: ObstacleType) {
+        guard let millScene = self.skView.scene as? MillScene else { return }
+        
+        let size = min(self.view.frame.width, self.view.frame.height)
+        let image = resize(type.image, toSize: CGSize(width: size/2, height: self.view.frame.size.height/2))
+        let mill = MillObstacle(withImage: image, andColor: UIColor.flatBrownDark)
+        mill.position = CGPoint(x: view.frame.width/2, y: view.frame.height/2)
+        mill.setScale(RandomCGFloat(0.5, max: 0.8))
+        mill.setupPhysics(fromImage: type.image)
+        millScene.obstacles.addChild(mill)
+    }
+    
+    func didClearObstacles() {
+        guard let millScene = self.skView.scene as? MillScene else { return }
+        millScene.obstacles.removeAllActions()
+        millScene.obstacles.removeAllChildren()
+    }
+    
+    func didClearParticles() {
+        guard let millScene = self.skView.scene as? MillScene else { return }
+        millScene.particles.removeAllActions()
+        millScene.particles.removeAllChildren()
+    }
+}
+
+func resize(_ image: UIImage, toSize size: CGSize) -> UIImage {
+    let size = image.size
+    
+    let widthRatio  = size.width  / image.size.width
+    let heightRatio = size.height / image.size.height
+    
+    // Figure out what our orientation is, and use that to form the rectangle
+    var newSize: CGSize
+    if(widthRatio > heightRatio) {
+        newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+    } else {
+        newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
+    }
+    
+    // This is the rect that we've calculated out and this is what is actually used below
+    let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+    
+    // Actually do the resizing to the rect using the ImageContext stuff
+    UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+    image.draw(in: rect)
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return newImage!
 }

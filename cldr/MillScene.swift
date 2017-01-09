@@ -6,17 +6,17 @@ import CoreMotion
 class MillScene: SKScene, SKPhysicsContactDelegate {
     
     var motionManager: CMMotionManager!
-    var particleImage: UIImage!
     let particles = SKNode()
     let obstacles = SKNode()
     var activeSlicePoints = [CGPoint]()
     var activeSliceBG: SKShapeNode!
     var activeSliceFG: SKShapeNode!
+    var shapeManagerDelegate: ShapeManagerDelegate?
     
     override func didMove(to view: SKView) {
         
         view.ignoresSiblingOrder = false
-        scene?.backgroundColor = UIColor.flatGrayColorDark()
+        scene?.backgroundColor = .flatSand
         
         motionManager = CMMotionManager()
         motionManager.startAccelerometerUpdates()
@@ -69,8 +69,6 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        guard let particleImage = particleImage else { return }
-        
         for touch in touches {
             
             let location = touch.location(in: self)
@@ -80,14 +78,8 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
             let prev = touch.previousLocation(in: self)
             let dir = CGVector(dx: (loc.x - prev.x) * 7.5,
                                dy: (loc.y - prev.y) * 7.5)
-            let body = MillThrowBody(withImage: particleImage)
-            body.position = loc
-            body.physicsBody?.velocity = dir
-            particles.addChild(body)
             
-            if particles.children.count > 100 {
-                particles.children[0].removeFromParent()
-            }
+            shapeManagerDelegate?.didAddShape(atPosition: loc, andVelocity: dir)
         }
         
         redrawActiveSlice()
@@ -123,14 +115,6 @@ class MillScene: SKScene, SKPhysicsContactDelegate {
 //        AudioKit.output = generator
 //        generator.start()
 //        AudioKit.start()
-    }
-    
-    func addObstacle(withImage image: UIImage, atPosition position: CGPoint) {
-        let mill = MillObstacle(withImage: image)
-        mill.position = position
-        mill.setScale(RandomCGFloat(0.5, max: 0.8))
-        mill.setupPhysics(fromImage: image)
-        obstacles.addChild(mill)
     }
     
     func createSlices() {

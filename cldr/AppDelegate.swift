@@ -12,8 +12,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.isIdleTimerDisabled = true
         
         // Set theme
-        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatNavyBlueColorDark(),
-                                                  with: .light)
+        Chameleon.setGlobalThemeUsingPrimaryColor(.flatSand, with: .dark)
+        window?.tintColor = .flatSand
+        // Override point for customization after application launch.
+        // Sets background to a blank/empty image
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        // Sets shadow (line below the bar) to a blank image
+        UINavigationBar.appearance().shadowImage = UIImage()
+        // Sets the translucent background color
+        UINavigationBar.appearance().backgroundColor = UIColor.init(complementaryFlatColorOf: .flatSand)
+        // Set translucent. (Default value is already true, so this can be removed if desired.)
         
         return true
     }
@@ -42,4 +50,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

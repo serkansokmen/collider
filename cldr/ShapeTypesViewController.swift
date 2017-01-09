@@ -1,36 +1,8 @@
 import UIKit
 
-enum ShapeType: String {
-    case Triangle = "triangle"
-    case Pentagon = "pentagon"
-    case Square = "square"
-    case Circle = "circle"
-    case Cross = "cross"
-    case Rounded = "rounded"
-}
-
-enum ObstacleType: String {
-    case Spiral = "spiral"
-    case Mill = "mill"
-    case Infinity = "infinity"
-}
-
-protocol ShapeTypeSelectionDelegate {
-    func didSelectThrowBodyWithImage(_ image: UIImage)
-    func didSelectObstacleWithImage(_ image: UIImage)
-}
-
-protocol ClearTypeDelegate {
-    func didClearObstacles()
-    func didClearParticles()
-}
-
 class ShapeTypesViewController: UIViewController {
     
-    let shapes: [ShapeType] = [.Triangle, .Pentagon, .Square, .Circle, .Cross, .Rounded]
-    let obstacles: [ObstacleType] = [.Spiral, .Mill, .Infinity]
-    
-    var delegate: ShapeTypeSelectionDelegate?
+    var delegate: ShapeManagerDelegate?
     
     @IBOutlet var tableView: UITableView!
     
@@ -48,18 +20,18 @@ extension ShapeTypesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
-            return shapes.count
+            return ShapeType.shapes.count
         } else {
-            return obstacles.count
+            return ShapeType.obstacles.count
         }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if section == 0 {
-            return "Shape types"
+            return "Shapes"
         } else if section == 1 {
-            return "Obstacle types"
+            return "Obstacles"
         }
         return nil
     }
@@ -69,10 +41,10 @@ extension ShapeTypesViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShapeTypeCell", for: indexPath) as! ShapeTypeCell
         var shapeName: String!
         if (indexPath as NSIndexPath).section == 0 {
-            shapeName = shapes[(indexPath as NSIndexPath).row].rawValue
+            shapeName = ShapeType.shapes[(indexPath as NSIndexPath).row].rawValue
             //            cell.backgroundColor = UIColor.flatRed()
         } else if (indexPath as NSIndexPath).section == 1 {
-            shapeName = obstacles[(indexPath as NSIndexPath).row].rawValue
+            shapeName = ShapeType.obstacles[(indexPath as NSIndexPath).row].rawValue
             //            cell.backgroundColor = UIColor.flatLime()
         }
         
@@ -84,10 +56,10 @@ extension ShapeTypesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if (indexPath as NSIndexPath).section == 0 {
-            delegate?.didSelectThrowBodyWithImage(UIImage(named: shapes[(indexPath as NSIndexPath).row].rawValue)!)
+            delegate?.didSelectThrowBody(ShapeType.shapes[(indexPath as NSIndexPath).row])
         } else if (indexPath as NSIndexPath).section == 1 {
-            delegate?.didSelectObstacleWithImage(UIImage(named: obstacles[(indexPath as NSIndexPath).row].rawValue)!)
+            delegate?.didSelectObstacle(ShapeType.obstacles[(indexPath as NSIndexPath).row])
         }
-        self.dismiss(animated: true, completion: nil)
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }
